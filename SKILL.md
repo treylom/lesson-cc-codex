@@ -47,9 +47,9 @@ Glob(".lesson-memory/*-cc-codex-101.json")
 ```bash
 Read("courses/cc-codex-101/CLAUDE.md")            # 시나리오·성공기준·학습자 프로필
 Read("courses/cc-codex-101/course-structure.json") # 모듈·레슨 그래프
-Glob("courses/cc-codex-101/lessons/{LESSON_ID}.md") → Read 매칭 파일
+Glob("courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   # 재귀: 자습(cc-01…codex-11) + 강의용(fastcampus/cc-fc-1…codex-fc-6) 모두 매칭
 ```
-레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = cc-01~cc-11, codex-01~codex-11). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
+레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = 자습 cc-01~11·codex-01~11, 강의용 cc-fc-1~7·codex-fc-1~6). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
 
 ---
 

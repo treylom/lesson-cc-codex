@@ -27,6 +27,13 @@ git clone https://github.com/treylom/lesson-cc-codex.git ~/.claude/skills/lesson
 ```
 클론 후 Claude Code를 다시 시작하면 `/lesson-cc-codex` 명령을 쓸 수 있습니다.
 
+**Codex에서도 똑같이 돼요** — 저장소를 클론한 폴더에서 Codex를 실행하고 `$lesson-cc-codex codex-01` 로 호출합니다:
+```bash
+git clone https://github.com/treylom/lesson-cc-codex.git
+cd lesson-cc-codex && codex      # 이 폴더에서 실행
+```
+> Claude Code = `/lesson-cc-codex`, Codex = `$lesson-cc-codex`. 내용은 같습니다. (자세한 설치·전역 설치 = [MANUAL.md](MANUAL.md))
+
 ### 3) 첫 실습 시작
 Claude Code 안에서:
 ```text
@@ -34,6 +41,8 @@ Claude Code 안에서:
 ```
 처음 실행하면 이름·업무·AI 경험을 가볍게 물어본 뒤(거부해도 됨), 바로 첫 실습을 시작합니다.
 이어서 하려면 `/lesson-cc-codex 이어서` 를 입력하면 다음 레슨을 자동으로 제안해요.
+
+> 💬 **막히거나 궁금하면 언제든** `/lesson-help <질문>` — 지금 레슨이든 다른 주제든, Claude Code·Codex 무엇이든 학습 도우미가 답합니다. (예: `/lesson-help cd 가 무슨 뜻이에요?`)
 
 ---
 
@@ -72,7 +81,7 @@ Claude Code 안에서:
 | codex-01 | Codex 설치와 첫 실행 |
 | codex-02 | CLI 사용법 + 슬래시·단축키 ($스킬 호출) |
 | codex-03 | 모델·effort·응답 차이 |
-| codex-04 | 멀티면 — App·IDE·Web/Mobile |
+| codex-04 | 여러 환경 — App·IDE·Web/Mobile |
 | codex-05 | 승인 + 샌드박스 3모드 |
 | codex-06 | AGENTS.md + config.toml |
 | codex-07 | MCP 외부도구 연결 |
@@ -82,6 +91,35 @@ Claude Code 안에서:
 | codex-11 | CC ↔ Codex 같은 것·다른 것 (종합 비교) |
 
 > 강의에서는 핵심 클립만 순서대로 진행하고, 나머지는 같은 명령으로 자습할 수 있습니다.
+
+---
+
+## 🎓 패스트캠퍼스 수강생용 — 강의 클립 순서
+
+패스트캠퍼스 강의를 듣는 분은 **아래 강의 클립 순서**대로 따라오면 됩니다. (위 22개 전체 레슨은 복습·심화용 자습 버전이에요.) 강의 클립은 핵심만 압축한 진행표이며, 같은 명령으로 직접 실습할 수 있습니다.
+
+**Claude Code 파트**
+| 순서 | 명령 | 클립 |
+|------|------|------|
+| 1 | `/lesson-cc-codex cc-fc-1` | 설치와 첫 실행 |
+| 2 | `/lesson-cc-codex cc-fc-2` | 에이전트 루프 + 첫 와우 |
+| 3 | `/lesson-cc-codex cc-fc-3` | 파일 다루기 + 명령어 |
+| 4 | `/lesson-cc-codex cc-fc-4` | 워크플로우 + Plan + 좋은 프롬프트 |
+| 5 | `/lesson-cc-codex cc-fc-5` | 나만의 규칙서 CLAUDE.md |
+| 6 | `/lesson-cc-codex cc-fc-6` | 세션관리 + 맥락오염 + 비용 |
+| 7 | `/lesson-cc-codex cc-fc-7` | 플러그인 + 스킬·슬래시 + codex plugin |
+
+**Codex 파트**
+| 순서 | 명령 | 클립 |
+|------|------|------|
+| 1 | `/lesson-cc-codex codex-fc-1` | Codex 설치와 첫 실행 |
+| 2 | `/lesson-cc-codex codex-fc-2` | CLI 사용법 + 슬래시·단축키($스킬) |
+| 3 | `/lesson-cc-codex codex-fc-3` | 모델·effort·응답 차이 |
+| 4 | `/lesson-cc-codex codex-fc-4` | 승인 + 샌드박스 3모드 |
+| 5 | `/lesson-cc-codex codex-fc-5` | AGENTS.md + config.toml |
+| 6 | `/lesson-cc-codex codex-fc-6` | CC↔Codex 같은 것·다른 것 |
+
+> Codex로 들으면 `/` 대신 `$`(예: `$lesson-cc-codex cc-fc-1`). 막히면 언제든 `/lesson-help <질문>`. 전체 안내는 [MANUAL.md](MANUAL.md).
 
 ---
 

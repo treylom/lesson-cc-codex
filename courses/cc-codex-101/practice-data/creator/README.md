@@ -40,3 +40,15 @@
 - 보고서는 "관찰 → 해석 → 제안" 순서로 정리하면 쉽다.
 - 같은 질문을 Claude Code와 Codex 양쪽에 던져보고 답이 어떻게 다른지 비교해 보는 것도 좋은 실습이다.
 - AI는 비서·짝꿍이지 시험 감독이 아니다 — 결과가 마음에 안 들면 다시 시키면 된다.
+
+---
+
+## 🔗 이 폴더 자료 연결 (옵시디언 그래프용)
+
+> 이 폴더를 나중에 **옵시디언 vault로 지정**하면(코스 Part 2에서 배웁니다) 아래 `[[...]]` 연결이 그래프로 한눈에 보입니다. 지금은 "자료끼리 이렇게 이어진다" 정도만 봐 두세요.
+
+**노트(문서)**
+[[consulting_schedule]] · [[content_plan]] · [[research_memo]]
+
+**데이터(표)**
+[[course_sales_monthly.csv]] · [[newsletter_stats.csv]] · [[student_inquiries.csv]]

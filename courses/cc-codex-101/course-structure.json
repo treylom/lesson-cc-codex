@@ -48,14 +48,14 @@
         { "id": "codex-01", "command": "/codex-01", "title": "Codex 설치와 첫 실행 (맨바닥 터미널)", "lesson_file": "lessons/codex-01.md", "covers": ["01 한눈에", "02 제품군", "03 모델", "04 요구사항·가격", "05 설치·인증"], "type": "lecture", "curriculum_clip": ["1.2.4"], "grounding_deck": "Part1 1.2.4", "sonseokhee_verify": true },
         { "id": "codex-02", "command": "/codex-02", "title": "CLI 사용법 + 슬래시·단축키 ($스킬 호출)", "lesson_file": "lessons/codex-02.md", "covers": ["06 CLI", "11 슬래시"], "type": "lecture", "curriculum_clip": ["1.2.4"], "grounding_deck": "Part1 1.2.4", "sonseokhee_verify": true },
         { "id": "codex-03", "command": "/codex-03", "title": "모델·effort·응답차이 (시연)", "lesson_file": "lessons/codex-03.md", "covers": ["03 모델", "15 세션(effort/토큰)"], "type": "lecture", "curriculum_clip": ["1.2.4"], "grounding_deck": "Part1 1.2.4", "sonseokhee_verify": true },
-        { "id": "codex-04", "command": "/codex-04", "title": "멀티면 — App·IDE·Web/Mobile", "lesson_file": "lessons/codex-04.md", "covers": ["07 App", "08 IDE", "09 Web/Mobile"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
+        { "id": "codex-04", "command": "/codex-04", "title": "여러 환경 — App·IDE·Web/Mobile", "lesson_file": "lessons/codex-04.md", "covers": ["07 App", "08 IDE", "09 Web/Mobile"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
         { "id": "codex-05", "command": "/codex-05", "title": "승인 + 샌드박스 3모드", "lesson_file": "lessons/codex-05.md", "covers": ["10 승인+샌드박스"], "type": "lecture", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
         { "id": "codex-06", "command": "/codex-06", "title": "AGENTS.md + config.toml", "lesson_file": "lessons/codex-06.md", "covers": ["12 AGENTS.md", "13 config.toml"], "type": "lecture", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true, "forward_utility": "cc-05 CLAUDE.md 와 대응 — 규칙서 개념 재사용" },
         { "id": "codex-07", "command": "/codex-07", "title": "MCP 외부도구 연결", "lesson_file": "lessons/codex-07.md", "covers": ["14 MCP"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
         { "id": "codex-08", "command": "/codex-08", "title": "비대화형 자동화 · codex exec · CI/CD", "lesson_file": "lessons/codex-08.md", "covers": ["16 비대화형·CI/CD"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
         { "id": "codex-09", "command": "/codex-09", "title": "프롬프트 전략 + 고급 활용", "lesson_file": "lessons/codex-09.md", "covers": ["17 프롬프트", "18 고급"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
         { "id": "codex-10", "command": "/codex-10", "title": "트러블슈팅 · FAQ · 팁 · 참고", "lesson_file": "lessons/codex-10.md", "covers": ["19 FAQ", "20 팁", "21 참고"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null, "sonseokhee_verify": true },
-        { "id": "codex-11", "command": "/codex-11", "title": "CC ↔ Codex 같은 것·다른 것 (종합 비교)", "lesson_file": "lessons/codex-11.md", "covers": ["codex101 전반", "codex-101-정리.md §5/§비교"], "type": "lecture", "curriculum_clip": null, "grounding_deck": "Part1 종합", "sonseokhee_verify": true, "note": "$스킬호출 vs / · AGENTS.md vs CLAUDE.md · 샌드박스 모드명 · gpt-5.x vs Claude · 멀티면 + worktree 멀티에이전트" }
+        { "id": "codex-11", "command": "/codex-11", "title": "CC ↔ Codex 같은 것·다른 것 (종합 비교)", "lesson_file": "lessons/codex-11.md", "covers": ["codex101 전반", "codex-101-정리.md §5/§비교"], "type": "lecture", "curriculum_clip": null, "grounding_deck": "Part1 종합", "sonseokhee_verify": true, "note": "$스킬호출 vs / · AGENTS.md vs CLAUDE.md · 샌드박스 모드명 · gpt-5.x vs Claude · 여러 환경 + worktree 멀티에이전트" }
       ]
     }
   },
@@ -63,6 +63,21 @@
     "note": "강의 클립(선별) = 넘버링 커맨드로 분리 진입. 덱에 '지금 /cc-03 입력' 콜아웃 의무. 나머지 = 부록 self-study.",
     "cc": ["cc-01", "cc-02", "cc-03", "cc-04", "cc-05", "cc-06", "cc-08"],
     "codex": ["codex-01", "codex-02", "codex-03", "codex-05", "codex-06", "codex-11"]
+  },
+  "fastcampus_lessons": {
+    "note": "강의 클립용 lecture-trim 런시트(이론→터미널). lessons/fastcampus/. 자습 22레슨의 강의용 압축판.",
+    "cc": ["cc-fc-1", "cc-fc-2", "cc-fc-3", "cc-fc-4", "cc-fc-5", "cc-fc-6", "cc-fc-7"],
+    "codex": ["codex-fc-1", "codex-fc-2", "codex-fc-3", "codex-fc-4", "codex-fc-5", "codex-fc-6"]
+  },
+  "helpers": {
+    "lesson_help": "/lesson-help <질문> — 학생이 언제든 자유 Q&A (commands/lesson-help.md). 현재 레슨/다른 주제/CC·Codex 무엇이든.",
+    "codex_skill": ".agents/skills/lesson-cc-codex/SKILL.md — Codex에서 $lesson-cc-codex 로 구동 (AGENTS.md 안내)."
+  },
+  "advanced_features": {
+    "cc": ["/goal <조건>", "/effort ultracode", "/workflows"],
+    "codex": ["서브에이전트(자연어 spawn)", "$imagegen 이미지 생성", "/goal", "yolo(codex-05)"],
+    "security": "cc-07: CC /security-review + Codex codex review --uncommitted (공개 전 보안 점검)",
+    "note": "고급·자율 기능은 멈춤(Esc) 안내와 함께. 실재 기능만 — 공식 docs + Codex 0.140.0 실측 검증."
   },
   "seed_lessons": {
     "note": "기존 8 레슨(1-1~2-4)은 시드(확장 재료). P2/P3 에서 cc-01~11·codex-01~11 로 흡수·재작곡 후 정리.",
@@ -77,8 +92,8 @@
     "foundation_spec": "내부 기획 문서"
   },
   "build_status": {
-    "P1": "DONE — company-context 4종 + practice-data 4업종(creator/store/freelancer/local) 생성 (opus). course-structure 재작성.",
-    "P2_P3": "PENDING — cc-01~11 + codex-01~11 모듈 lesson 파일 fan-out (per-doc 드래프터+합성+DA, Codex=실제 0.140.0 실측).",
-    "P4_onward": "커맨드(/cc-NN·/codex-NN) · SKILL/README/LICENSE · sample-vault · 덱 grounding"
+    "P1": "DONE — company-context 4종 + practice-data 4업종(creator/store/freelancer/local) 생성. course-structure 재작성.",
+    "P2_P3": "DONE — cc-01~11 + codex-01~11 (22) 정확판 이중검증(실제 Codex 0.140.0 실측 포함). 강의용 fastcampus 13.",
+    "P4_onward": "DONE — 커맨드(/lesson-cc-codex·/lesson-help) · SKILL/README/MANUAL/AGENTS/LICENSE · Codex 패키징(.agents/skills) · 보안(cc-07)·고급기능(cc-10·codex-09) 섹션. 잔여: sample-vault wikilink · 슬라이드 덱."
   }
 }

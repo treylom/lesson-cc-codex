@@ -54,7 +54,7 @@
 
 **Codex 트랙 (codex101 21섹션 1:1, 11모듈 — 실제 0.140.0 실측 검증)**
 - 강의: codex-01 설치·첫실행 / codex-02 CLI·슬래시($스킬) / codex-03 모델·effort·응답차이 / codex-05 승인·샌드박스 / codex-06 AGENTS.md·config.toml / codex-11 CC↔Codex 종합비교
-- 부록: codex-04 멀티면(App·IDE·Web) / codex-07 MCP / codex-08 비대화형·codex exec·CI/CD / codex-09 프롬프트·고급 / codex-10 트러블슈팅·FAQ·팁
+- 부록: codex-04 여러 환경(App·IDE·Web) / codex-07 MCP / codex-08 비대화형·codex exec·CI/CD / codex-09 프롬프트·고급 / codex-10 트러블슈팅·FAQ·팁
 
 ## 코스의 마지막 장면
 지우는 (1) 데이터를 AI에게 읽히고 질문하고, (2) Claude Code로 보고서/콘텐츠 초안을 만들고, (3) Codex를 설치·조절(effort·모델)해 같은 일을 해보고, (4) **CC 안에서 codex plugin으로 둘을 같이 쓰며** "두 도구는 뼈대가 같고 제품·모델·세부 기능만 다르다"를 스스로 설명할 수 있게 된다. 이 코스(=커리큘럼 1단계)의 목적은 "도구를 안다"가 아니라 **"두 AI 도구로 내 사업의 실무를 한 사이클 끝낸다"** 이다.
