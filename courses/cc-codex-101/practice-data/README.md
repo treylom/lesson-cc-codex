@@ -1,10 +1,21 @@
 # practice-data 안내 (cc-codex-101)
 
-이 폴더는 Claude Code + Codex 실습용 데이터다. 비개발자도 부담 없이 다루도록 **숫자 데이터 1개 + 문서 데이터 1개**로 구성.
+이 폴더는 Claude Code + Codex 실습용 데이터다. 비개발자도 부담 없이 다루도록 **데이터 6종(CSV 3 + 문서 3)**으로 구성.
 
 ## 구성 파일
+### CSV 데이터 (3개)
 - `sales_data.csv` — 2025년 12개월 채널별 매출 데이터.
-- `meeting_notes.md` — 운영·고객지원·분기리뷰 회의록 3건.
+- `channel_sales_6months.csv` — 6개 채널별 6개월 상세 매출.
+- `customer_inquiries.csv` — 고객 문의 내역·카테고리·해결율.
+- `product_feedback_log.csv` — 제품 피드백 로그·평점·반영 상태.
+
+### 문서 데이터 (3개)
+- `meeting_notes.md` — 운영·고객지원·분기리뷰 회의록.
+- `team_handbook.md` — 팀 운영 가이드·의사결정 기준.
+- `weekly_ops_meetings_2026Q2.md` — 분기별 주간 운영 회의 요약.
+- `marketing_campaign_results.md` — 마케팅 캠페인 결과·성과 분석.
+
+### 기타
 - `README.md` — 현재 문서.
 
 ## 이 폴더로 해볼 수 있는 것

@@ -1,102 +1,140 @@
 # lesson-cc-codex
 
-Claude Code + Codex 대화형 학습 스킬 (interactive lesson engine)
+**Claude Code + Codex를 "직접 해보며" 배우는 대화형 실습 스킬** — 비개발자 1인 사업자·실무자를 위한 터미널 첫걸음부터 실전까지.
 
-## 개요
-
-`/lesson-cc-codex`는 Claude Code와 Codex를 처음 배우는 **비개발자 실무자** 대상의 인터랙티브 학습 스킬입니다. 이론 설명 후 실습을 1:1로 진행하는 조교(TA) 역할을 하며, 수강생 프로필을 기반으로 학습을 적응형으로 진행합니다.
-
-- **학습 형식**: 4가지 모듈 (Claude Code 2개 + Codex 2개)
-- **대상**: 패스트캠퍼스 온라인 강의 수강생 및 개인 학습자
-- **특징**: 수강생이 직접 명령을 입력하고 실행하도록 가이드 (대신 해주지 않음)
-
-## 설치
-
-### Claude Code 내장 스킬
-```bash
-/lesson-cc-codex 1-1   # Claude Code 첫 실습 시작
-```
-
-또는 프로필 기반으로 다음 레슨 자동 제안:
-```bash
-/lesson-cc-codex 이어서
-```
-
-### Git 저장소에서 직접 설치
-```bash
-git clone https://github.com/treylom/lesson-cc-codex.git
-# 또는 Codex CLI 플러그인으로 설치
-/plugin install github:treylom/lesson-cc-codex
-```
-
-## 코스 구조
-
-**cc-codex-101** 코스 (4개 레슨, 각 15~20분)
-
-| 모듈 | 레슨 ID | 제목 | 주제 |
-|------|---------|------|------|
-| 1 (Claude Code) | 1-1 | Claude Code 첫 실습 | 터미널에서 Claude 기본 명령 및 응답 방식 |
-| | 1-2 | Claude Code 파일 다루기 | 파일 읽기, 쓰기, 수정하기 |
-| 2 (Codex) | 2-1 | Codex 첫 실습 | Codex와 Claude Code의 차이 체험 |
-| | 2-2 | Codex 심화 + 도구 비교 | 도구 선택 및 실무 활용 |
-
-## 사용 방법
-
-```bash
-# 레슨 1-1 시작
-/lesson-cc-codex 1-1
-
-# 다음 완료 레슨부터 자동 시작
-/lesson-cc-codex 이어서
-
-# 특정 레슨으로 점프
-/lesson-cc-codex 2-1
-```
-
-### 주요 기능
-
-- **수강생 인터뷰**: 첫 실습 시 이름·회사·AI 경험 수준 수집 → `.lesson-memory/` 저장
-- **진행 추적**: 완료한 레슨 기록 → 프로필 자동 업데이트
-- **에러 처리**: 막히면 트러블슈팅 체크리스트 제공
-- **숙련도 적응**: beginner/intermediate/advanced 레벨별 설명 깊이 조정
-
-## 레슨 구성
-
-각 레슨은 **3 Phase**로 진행:
-
-1. **Phase 1 Opening** — 인사 → 학습 목표 설명 → 준비 상태 확인
-2. **Phase 2 Progress** — 단계별 명령 제시 → 수강생이 직접 입력 → 결과 확인 → 트러블슈팅
-3. **Phase 3 Closing** — 요약 → 저장/커밋 → 다음 레슨 예고 → 프로필 갱신
-
-## 출처 / Attribution
-
-이 스킬은 다음 오픈소스 및 공개 자료를 기반으로 합니다.
-
-### 레슨 엔진
-- **treylom/lesson-skill** — 대화형 교육 스킬 기본 아키텍처
-- **treylom/lesson-a** — "이론 설명 → 실습" 진행 패턴 (성우하이텍 커스텀)
-
-### Claude Code 레슨 콘텐츠
-- **CC101-Guide** (fivetaku/cc101) — 21개 섹션 공식 가이드, 정본 경로 `AI_Second_Brain/020-Library/Research/Claude-Code-Guides/CC101-Guide/`
-  - 권리: fivetaku (원저자) / 허가: CC BY-SA 3.0 하에 참고 및 재작곡
-  - 재작곡 방식: 통째복붙 금지, 필요한 분·학습 목표별로 재구성
-
-### Codex 레슨 콘텐츠
-- **swhan0329/codex-101** — https://swhan0329.github.io/codex-101
-  - Codex 실습 및 Claude Code와의 비교 패턴 참고
-
-## 라이선스
-
-MIT License — Copyright (c) 2026 treylom
-
-자유로운 사용, 수정, 배포 가능합니다. (라이선스 전문은 LICENSE 파일 참조)
-
-## 기여 및 피드백
-
-- **문제 보고**: GitHub Issues
-- **개선 제안**: GitHub Discussions 또는 Pull Requests
+터미널이 처음이어도 괜찮습니다. 이 스킬을 켜면 Claude(또는 Codex)가 **실습 조교(TA)**가 되어, 한 단계씩 명령을 알려주고 여러분이 직접 입력해 보도록 옆에서 함께합니다. 대신 해주지 않고, 직접 해보게 안내해요.
 
 ---
 
-**마지막 업데이트**: 2026-06-19
-**유지보수**: treylom (코난 봇 스킬 담당자)
+## 🚀 빠른 시작 (설치 & 첫 실행)
+
+### 1) 사전 준비
+- **Claude Code**가 설치돼 있어야 합니다. (없다면 → https://docs.claude.com/claude-code 설치 후 진행)
+- 터미널을 열 수 있으면 충분합니다. 코딩 지식은 필요 없어요.
+
+### 2) 스킬 설치 — 둘 중 편한 방법
+
+**방법 A. 플러그인으로 설치 (권장)** — Claude Code 대화창 안에서:
+```text
+/plugin marketplace add treylom/lesson-cc-codex
+/plugin install lesson-cc-codex
+```
+> 설치 명령 형식은 Claude Code 버전에 따라 조금 다를 수 있어요. 안 되면 `/plugin` 을 쳐서 도움말을 확인하세요.
+
+**방법 B. 직접 클론** — 터미널에서:
+```bash
+git clone https://github.com/treylom/lesson-cc-codex.git ~/.claude/skills/lesson-cc-codex
+```
+클론 후 Claude Code를 다시 시작하면 `/lesson-cc-codex` 명령을 쓸 수 있습니다.
+
+### 3) 첫 실습 시작
+Claude Code 안에서:
+```text
+/lesson-cc-codex cc-01
+```
+처음 실행하면 이름·업무·AI 경험을 가볍게 물어본 뒤(거부해도 됨), 바로 첫 실습을 시작합니다.
+이어서 하려면 `/lesson-cc-codex 이어서` 를 입력하면 다음 레슨을 자동으로 제안해요.
+
+---
+
+## 📚 무엇을 배우나요?
+
+**시나리오**: 여러분은 1인 사업자 **'지우'**입니다. 온라인 강의를 만들어 팔고, 뉴스레터를 보내고, 가끔 컨설팅도 합니다. 기획·글쓰기·고객응대·매출정리·리서치를 혼자 다 하죠. 이 코스에서 **Claude Code와 Codex 두 AI 도구를 사업 운영 파트너로** 만들어, 자료 읽기 → 분석 → 보고서/콘텐츠 초안까지 한 사이클을 직접 끝내봅니다.
+
+**4가지 업종 트랙** — 자기 사업과 가까운 걸 골라 같은 실습을 자기 데이터로:
+- ✍️ **creator** (기본·권장): 온라인 강의·뉴스레터·블로그·컨설팅
+- 🛒 **store**: 스마트스토어·쿠팡 셀러
+- 💼 **freelancer**: 디자인·마케팅·개발 외주
+- ☕ **local**: 카페·공방·학원
+
+---
+
+## 🗂️ 코스 구성 — 22개 레슨 (각 15~50분)
+
+### Claude Code 트랙 (`/lesson-cc-codex cc-NN`)
+| 번호 | 주제 |
+|------|------|
+| cc-01 | 설치와 첫 실행 (맨바닥 터미널) |
+| cc-02 | 에이전트 루프 + 첫 와우 |
+| cc-03 | 파일 다루기 + 명령어 |
+| cc-04 | 워크플로우 + Plan + 좋은 프롬프트 |
+| cc-05 | 나만의 규칙서 CLAUDE.md |
+| cc-06 | 세션관리 + 맥락오염 + 비용 |
+| cc-07 | GitHub로 저장·공유 (+ 공개 전 보안 점검) |
+| cc-08 | 플러그인 + 스킬·슬래시 + codex plugin |
+| cc-09 | MCP 외부도구 연결 |
+| cc-10 | 서브에이전트 + Hooks + 자동화 |
+| cc-11 | 워크스페이스 종합 + 트러블슈팅 + 다음 단계 |
+
+### Codex 트랙 (`/lesson-cc-codex codex-NN`)
+| 번호 | 주제 |
+|------|------|
+| codex-01 | Codex 설치와 첫 실행 |
+| codex-02 | CLI 사용법 + 슬래시·단축키 ($스킬 호출) |
+| codex-03 | 모델·effort·응답 차이 |
+| codex-04 | 멀티면 — App·IDE·Web/Mobile |
+| codex-05 | 승인 + 샌드박스 3모드 |
+| codex-06 | AGENTS.md + config.toml |
+| codex-07 | MCP 외부도구 연결 |
+| codex-08 | 비대화형 자동화 · codex exec · CI/CD |
+| codex-09 | 프롬프트 전략 + 고급 활용 |
+| codex-10 | 트러블슈팅 · FAQ · 팁 |
+| codex-11 | CC ↔ Codex 같은 것·다른 것 (종합 비교) |
+
+> 강의에서는 핵심 클립만 순서대로 진행하고, 나머지는 같은 명령으로 자습할 수 있습니다.
+
+---
+
+## ✅ 이 코스를 마치면
+
+1. 터미널에서 Claude Code·Codex를 설치·로그인해 첫 응답을 받아낸다.
+2. 내 데이터에서 눈에 띄는 패턴을 AI와 함께 찾는다.
+3. 나만의 `CLAUDE.md`(규칙서)를 만들고, 보고서/콘텐츠 초안 1개를 완성한다.
+4. Codex에서 모델·effort를 바꿔 차이를 보고, **CC ↔ Codex의 공통점·차이점을 한 문장으로** 설명한다.
+5. 공개·납품 전 `/security-review`(CC)·`codex review`(Codex)로 **스스로 보안 점검**하는 습관을 익힌다.
+
+---
+
+## 🔒 안전 & 개인정보
+
+- 이 저장소의 실습 데이터(`practice-data/`)는 **전부 가상의 인물·사업체**로 만든 예시입니다. 실제 개인정보가 없습니다.
+- 실습 중 만드는 파일은 모두 여러분 컴퓨터 안에만 저장됩니다.
+- AI는 비서이자 짝꿍이지 시험 감독이 아니에요 — 실수해도 다시 시키면 됩니다.
+
+---
+
+## 🧩 진행 방식 (요약)
+
+- 모든 설명은 비개발자 눈높이. 전문 용어는 첫 등장 시 쉬운 비유와 함께.
+- 한 번에 하나씩만 실행. "완벽함"보다 "직접 해봤다"에 초점.
+- 명령어는 알려주되 입력은 여러분이 직접 (환경 설치·에러 진단·강사 시연은 예외).
+
+---
+
+## 📦 구성
+
+```
+lesson-cc-codex/
+├─ SKILL.md                 # 스킬 엔진(진행 로직)
+├─ commands/                # 슬래시 명령 정의
+├─ courses/cc-codex-101/
+│  ├─ CLAUDE.md             # 코스 컨텍스트
+│  ├─ course-structure.json # 모듈 맵
+│  ├─ lessons/              # 22개 레슨 (cc-01~11, codex-01~11)
+│  ├─ company-context/      # 시나리오·업종 트랙·도구 가이드
+│  └─ practice-data/        # 4개 업종 트랙 실습 데이터(가상)
+└─ references/              # 교수법·엔진·메모리 스키마
+```
+
+---
+
+## 🛠️ 기반 / 크레딧
+
+- **lesson-a / lesson-skill** — "이론 설명 → 실습" 진행 패턴의 대화형 교육 엔진 계보.
+- 코스 콘텐츠는 공개 가이드(Claude Code 101 = fivetaku/cc101 · Codex 101 = swhan0329/codex-101)를 비개발자 실무자용으로 재구성한 것입니다. (통째 복붙이 아니라 학습 목표별 재작곡.)
+
+## 📄 라이선스
+
+MIT License — Copyright (c) 2026 treylom. 자유롭게 쓰고, 고치고, 나눠 주세요. (전문은 `LICENSE` 참조)
+
+**문의 / 기여**: GitHub Issues · Discussions로 남겨주세요.

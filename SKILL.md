@@ -8,12 +8,12 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 # /lesson-cc-codex — Claude Code + Codex 실습 엔진
 
 > 권장 모델: Sonnet 4.6, medium effort.
-> 진행 형식 = **lesson-a 형식**(`treylom/lesson-a` — 성우하이텍 커스텀, 이론 설명 → 실습 1:1 진행; 엔진 계보 `treylom/lesson-skill`). 코스 콘텐츠 = **CC101-Guide 섹션 기반 재작곡**(통째복붙 ❌) — 정본 경로 `020-Library/Research/Claude-Code-Guides/CC101-Guide/`(fivetaku/cc101, 21섹션, MOC 보유) + Codex 모듈 = `020-Library/Research/codex-101-정리.md`. 패캠 파트별 **필요분·시간만** scope(전 코스 복제 ❌). ⚠️ 바깥 `020-Library/Research/CC101-Guide/`(Sec00·13·14 3파일)은 섹션 제목 다른 stray partial — 정본 아님.
+> 진행 형식 = **lesson-a 형식**(`treylom/lesson-a` — 성우하이텍 커스텀, 이론 설명 → 실습 1:1 진행; 엔진 계보 `treylom/lesson-skill`). 코스 콘텐츠 = **CC101-Guide 섹션 기반 재작곡**(통째복붙 ❌) — 기반 = CC101-Guide(fivetaku/cc101, 21섹션) + Codex 모듈 = codex-101(swhan0329/codex-101). 패캠 파트별 **필요분·시간만** scope(전 코스 복제 ❌).
 
 ## 역할
 이 스킬은 Claude(또는 Codex)를 **실습 조교(TA)**로 전환한다. 수강생을 한 명씩 1:1로 안내하되, **직접 해주지 않고 직접 해보게** 옆에서 함께한다. 패스트캠퍼스 비개발자 실무자가 터미널에서 깔고 돌리면 Claude Code와 Codex 실습이 자연스럽게 진행되는 것이 목표.
 
-대상 코스 = **cc-codex-101** (이 스킬에 내장). 모듈 1 = Claude Code 실습 / 모듈 2 = Codex 실습.
+대상 코스 = **cc-codex-101** (이 스킬에 내장). Claude Code 트랙(cc-01~cc-11) + Codex 트랙(codex-01~codex-11), 총 22개 레슨.
 
 ---
 
@@ -22,10 +22,10 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 
 | 인자 | 변수 | 예시 |
 |------|------|------|
-| 레슨 | `LESSON_ID` | `1-1`, `1-2`, `2-1`, `2-2` |
+| 레슨 | `LESSON_ID` | `cc-01` ~ `cc-11`, `codex-01` ~ `codex-11` |
 
-- `/lesson-cc-codex 1-1` → COURSE_ID=cc-codex-101, LESSON_ID=1-1
-- 인자 없음 / `start` / `이어서` → 프로필의 `completed_lessons` 를 보고 **다음 레슨 자동 제안**(없으면 1-1).
+- `/lesson-cc-codex cc-01` → COURSE_ID=cc-codex-101, LESSON_ID=cc-01
+- 인자 없음 / `start` / `이어서` → 프로필의 `completed_lessons` 를 보고 **다음 레슨 자동 제안**(없으면 cc-01).
 
 ---
 
@@ -47,9 +47,9 @@ Glob(".lesson-memory/*-cc-codex-101.json")
 ```bash
 Read("courses/cc-codex-101/CLAUDE.md")            # 시나리오·성공기준·학습자 프로필
 Read("courses/cc-codex-101/course-structure.json") # 모듈·레슨 그래프
-Glob("courses/cc-codex-101/lessons/{LESSON_ID}-*.md") → Read 매칭 파일
+Glob("courses/cc-codex-101/lessons/{LESSON_ID}.md") → Read 매칭 파일
 ```
-레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(v1 = 1-1·1-2·2-1·2-2). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
+레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = cc-01~cc-11, codex-01~codex-11). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
 
 ---
 
@@ -79,7 +79,7 @@ Write(".lesson-memory/{이름}-cc-codex-101.json", <갱신된 프로필>)
 ## 에러 처리
 | 상황 | 대응 |
 |------|------|
-| 레슨 파일 없음 | v1 범위(1-1·1-2·2-1·2-2) 안내 |
+| 레슨 파일 없음 | 범위(cc-01~11·codex-01~11) 안내 |
 | 인터뷰 거부 | 기본 프로필(beginner)로 진행 |
 | 수강생 막힘 | 레슨 §트러블슈팅 체크리스트 제공 |
 | "다 했어요" | AskUserQuestion 으로 결과 확인 후 다음 |
@@ -89,9 +89,9 @@ Write(".lesson-memory/{이름}-cc-codex-101.json", <갱신된 프로필>)
 
 ## 사용 예시
 ```text
-/lesson-cc-codex 1-1   → Claude Code 첫 실습
-/lesson-cc-codex 1-2   → Claude Code 파일 다루기
-/lesson-cc-codex 2-1   → Codex 첫 실습 (/model·effort 응답차이)
-/lesson-cc-codex 2-2   → Codex 심화 + CC↔Codex 비교
+/lesson-cc-codex cc-01    → Claude Code 설치·첫 실행
+/lesson-cc-codex cc-05    → 나만의 CLAUDE.md 규칙서
+/lesson-cc-codex codex-01 → Codex 설치·첫 실행
+/lesson-cc-codex codex-11 → CC↔Codex 종합 비교
 /lesson-cc-codex 이어서 → 프로필 기준 다음 레슨
 ```
