@@ -19,8 +19,15 @@ allowedTools: Read, Glob, Grep, AskUserQuestion
    - 안전: 위험 명령(`rm -rf` 등)·비밀정보(키·토큰) 노출은 경고와 함께만 안내.
 4. **범위(무엇이든)**: 지금 레슨에서 막힘 / 다음 레슨 미리보기 / Claude Code·Codex 개념 / 터미널 기초 / "이걸 하려면 뭘 배워야 하나요?" 같은 진로 안내까지.
 
+### 클립 번호로 물으면 (예: `1.2.3`, `1.3.2`)
+질문이 강의 클립 번호(`N.N.N`) 형식이면:
+1. `Read("courses/cc-codex-101/course-structure.json")` → `clip_to_lesson` 에서 그 클립의 fc 레슨 확인.
+2. 없으면 `tracks.*.modules` 의 `curriculum_clip` 에서 그 클립을 포함하는 모듈을 찾아 대응 fc 레슨 안내.
+3. 답: "강의 클립 `<클립>` 은 **`/lesson-cc-codex fc-NN`** 으로 직접 해볼 수 있어요 (레슨: <제목>)." 관련 레슨이 여럿이면 함께 안내.
+
 ## 예시
 - `/lesson-help cd 가 무슨 뜻이에요?`
 - `/lesson-help codex에서 모델 바꾸는 법 알려줘`
 - `/lesson-help 내 매출 CSV를 분석하려면 어느 레슨부터 보면 돼?`
 - `/lesson-help 방금 에러 났는데 뭘 잘못한 걸까?`
+- `/lesson-help 1.2.3 어떤 레슨이야?`  (클립 번호 → fc 레슨 연결)

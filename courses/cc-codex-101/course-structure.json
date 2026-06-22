@@ -66,8 +66,13 @@
   },
   "fastcampus_lessons": {
     "note": "강의 클립용 lecture-trim 런시트(이론→터미널). lessons/fastcampus/. 자습 22레슨의 강의용 압축판.",
-    "cc": ["cc-fc-1", "cc-fc-2", "cc-fc-3", "cc-fc-4", "cc-fc-5", "cc-fc-6", "cc-fc-7"],
-    "codex": ["codex-fc-1", "codex-fc-2", "codex-fc-3", "codex-fc-4", "codex-fc-5", "codex-fc-6"]
+    "cc": ["fc-01", "fc-02", "fc-03", "fc-04", "fc-05", "fc-06", "fc-07"],
+    "codex": ["fc-08", "fc-09", "fc-10", "fc-11", "fc-12", "fc-13"]
+  },
+  "clip_to_lesson": {
+    "_note": "강의 클립 번호 → 대표 강의용 fc 레슨. /lesson-cc-codex <클립> 또는 /lesson-help <클립> 에서 조회. 전체 다대다는 tracks.*.modules.curriculum_clip 참조.",
+    "1.2.2": "fc-02", "1.2.3": "fc-01", "1.2.4": "fc-10", "1.2.5": "fc-08",
+    "1.3.1": "fc-04", "1.3.2": "fc-07", "1.3.3": "fc-04"
   },
   "helpers": {
     "lesson_help": "/lesson-help <질문> — 학생이 언제든 자유 Q&A (commands/lesson-help.md). 현재 레슨/다른 주제/CC·Codex 무엇이든.",

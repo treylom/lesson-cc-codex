@@ -101,25 +101,25 @@ Claude Code 안에서:
 **Claude Code 파트**
 | 순서 | 명령 | 클립 |
 |------|------|------|
-| 1 | `/lesson-cc-codex cc-fc-1` | 설치와 첫 실행 |
-| 2 | `/lesson-cc-codex cc-fc-2` | 에이전트 루프 + 첫 와우 |
-| 3 | `/lesson-cc-codex cc-fc-3` | 파일 다루기 + 명령어 |
-| 4 | `/lesson-cc-codex cc-fc-4` | 워크플로우 + Plan + 좋은 프롬프트 |
-| 5 | `/lesson-cc-codex cc-fc-5` | 나만의 규칙서 CLAUDE.md |
-| 6 | `/lesson-cc-codex cc-fc-6` | 세션관리 + 맥락오염 + 비용 |
-| 7 | `/lesson-cc-codex cc-fc-7` | 플러그인 + 스킬·슬래시 + codex plugin |
+| 1 | `/lesson-cc-codex fc-01` | 설치와 첫 실행 |
+| 2 | `/lesson-cc-codex fc-02` | 에이전트 루프 + 첫 와우 |
+| 3 | `/lesson-cc-codex fc-03` | 파일 다루기 + 명령어 |
+| 4 | `/lesson-cc-codex fc-04` | 워크플로우 + Plan + 좋은 프롬프트 |
+| 5 | `/lesson-cc-codex fc-05` | 나만의 규칙서 CLAUDE.md |
+| 6 | `/lesson-cc-codex fc-06` | 세션관리 + 맥락오염 + 비용 |
+| 7 | `/lesson-cc-codex fc-07` | 플러그인 + 스킬·슬래시 + codex plugin |
 
 **Codex 파트**
 | 순서 | 명령 | 클립 |
 |------|------|------|
-| 1 | `/lesson-cc-codex codex-fc-1` | Codex 설치와 첫 실행 |
-| 2 | `/lesson-cc-codex codex-fc-2` | CLI 사용법 + 슬래시·단축키($스킬) |
-| 3 | `/lesson-cc-codex codex-fc-3` | 모델·effort·응답 차이 |
-| 4 | `/lesson-cc-codex codex-fc-4` | 승인 + 샌드박스 3모드 |
-| 5 | `/lesson-cc-codex codex-fc-5` | AGENTS.md + config.toml |
-| 6 | `/lesson-cc-codex codex-fc-6` | CC↔Codex 같은 것·다른 것 |
+| 1 | `/lesson-cc-codex fc-08` | Codex 설치와 첫 실행 |
+| 2 | `/lesson-cc-codex fc-09` | CLI 사용법 + 슬래시·단축키($스킬) |
+| 3 | `/lesson-cc-codex fc-10` | 모델·effort·응답 차이 |
+| 4 | `/lesson-cc-codex fc-11` | 승인 + 샌드박스 3모드 |
+| 5 | `/lesson-cc-codex fc-12` | AGENTS.md + config.toml |
+| 6 | `/lesson-cc-codex fc-13` | CC↔Codex 같은 것·다른 것 |
 
-> Codex로 들으면 `/` 대신 `$`(예: `$lesson-cc-codex cc-fc-1`). 막히면 언제든 `/lesson-help <질문>`. 전체 안내는 [MANUAL.md](MANUAL.md).
+> Codex로 들으면 `/` 대신 `$`(예: `$lesson-cc-codex fc-01`). 막히면 언제든 `/lesson-help <질문>`. 전체 안내는 [MANUAL.md](MANUAL.md).
 
 ---
 

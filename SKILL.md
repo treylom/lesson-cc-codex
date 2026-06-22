@@ -22,10 +22,11 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 
 | 인자 | 변수 | 예시 |
 |------|------|------|
-| 레슨 | `LESSON_ID` | `cc-01` ~ `cc-11`, `codex-01` ~ `codex-11` |
+| 레슨 | `LESSON_ID` | 자습 `cc-01`~`cc-11`·`codex-01`~`codex-11` / 강의용 `fc-01`~`fc-13` / 클립번호 `1.2.3` |
 
 - `/lesson-cc-codex cc-01` → COURSE_ID=cc-codex-101, LESSON_ID=cc-01
 - 인자 없음 / `start` / `이어서` → 프로필의 `completed_lessons` 를 보고 **다음 레슨 자동 제안**(없으면 cc-01).
+- **클립 번호**(`N.N.N`, 예 `1.2.3`) → `Read("courses/cc-codex-101/course-structure.json")` 의 `clip_to_lesson[클립]` 으로 LESSON_ID 해소. 없으면 `tracks.*.modules` 의 `curriculum_clip` 역참조(그 클립 포함 모듈 → 대응 fc 레슨).
 
 ---
 
@@ -47,9 +48,9 @@ Glob(".lesson-memory/*-cc-codex-101.json")
 ```bash
 Read("courses/cc-codex-101/CLAUDE.md")            # 시나리오·성공기준·학습자 프로필
 Read("courses/cc-codex-101/course-structure.json") # 모듈·레슨 그래프
-Glob("courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   # 재귀: 자습(cc-01…codex-11) + 강의용(fastcampus/cc-fc-1…codex-fc-6) 모두 매칭
+Glob("courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   # 재귀: 자습(cc-01…codex-11) + 강의용(fastcampus/fc-01…fc-13) 모두 매칭
 ```
-레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = 자습 cc-01~11·codex-01~11, 강의용 cc-fc-1~7·codex-fc-1~6). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
+레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = 자습 cc-01~11·codex-01~11, 강의용 fc-01~7·fc-08~6). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
 
 ---
 

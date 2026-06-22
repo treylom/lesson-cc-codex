@@ -98,19 +98,19 @@ git clone https://github.com/treylom/lesson-cc-codex.git ~/.claude/skills/lesson
 
 | 번호 | 제목 |
 |------|------|
-| cc-fc-1 | 설치와 첫 실행 (맨바닥 터미널) |
-| cc-fc-2 | 에이전트 루프 + 첫 와우 |
-| cc-fc-3 | 파일 다루기 + 명령어 |
-| cc-fc-4 | 워크플로우 + Plan + 좋은 프롬프트 |
-| cc-fc-5 | 나만의 규칙서 CLAUDE.md |
-| cc-fc-6 | 세션관리 + 맥락오염 + 비용 |
-| cc-fc-7 | 플러그인 + 스킬·슬래시 + codex plugin |
-| codex-fc-1 | Codex 설치와 첫 실행 |
-| codex-fc-2 | CLI 사용법 + 슬래시·단축키($스킬) |
-| codex-fc-3 | 모델·effort·응답 차이 |
-| codex-fc-4 | 승인 + 샌드박스 3모드 |
-| codex-fc-5 | AGENTS.md + config.toml — 규칙서 |
-| codex-fc-6 | CC↔Codex 같은 것·다른 것 |
+| fc-01 | 설치와 첫 실행 (맨바닥 터미널) |
+| fc-02 | 에이전트 루프 + 첫 와우 |
+| fc-03 | 파일 다루기 + 명령어 |
+| fc-04 | 워크플로우 + Plan + 좋은 프롬프트 |
+| fc-05 | 나만의 규칙서 CLAUDE.md |
+| fc-06 | 세션관리 + 맥락오염 + 비용 |
+| fc-07 | 플러그인 + 스킬·슬래시 + codex plugin |
+| fc-08 | Codex 설치와 첫 실행 |
+| fc-09 | CLI 사용법 + 슬래시·단축키($스킬) |
+| fc-10 | 모델·effort·응답 차이 |
+| fc-11 | 승인 + 샌드박스 3모드 |
+| fc-12 | AGENTS.md + config.toml — 규칙서 |
+| fc-13 | CC↔Codex 같은 것·다른 것 |
 
 ---
 
