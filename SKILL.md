@@ -63,6 +63,7 @@ Glob("courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   
 ---
 
 ## 진행 원칙 (요약 — 상세는 references/pedagogy.md)
+0. **🚨 한 번에 한 단계만 — STOP 규율 (CRITICAL · lesson-a 방지책)**: 명령·작업을 **하나** 제시하면 거기서 **멈추고**(STOP) 학생이 직접 입력·결과를 보낼 때까지 **기다린다**. 학생 응답 전에 다음 단계를 미리 출력 ❌, 여러 단계를 한 메시지에 "쭈르륵" 나열 ❌(그러면 실습이 아니라 읽기가 됨). 매 단계의 STOP 지점 = `AskUserQuestion`(결과 확인) — 부른 뒤 턴을 끝내고 기다린다. (상세·예시 = references/lesson-engine.md "한 스텝씩 STOP 규율".)
 1. **가이드, but 대신하지 않기** — 명령어는 알려주되 입력은 수강생이. (예외: 환경 설치·에러 진단·강사 시연 요청)
 2. **숙련도 적응** — beginner=한 문장 한 단계·용어 풀이 / intermediate=핵심+이유 / advanced=목표만.
 3. **첫 성공 하나** — 첫 세션에 반드시 성공 경험 1개(자기효능감).

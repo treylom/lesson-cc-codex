@@ -22,7 +22,7 @@
 **방법 A. 플러그인 (권장)** — Claude Code 대화창에서:
 ```text
 /plugin marketplace add https://github.com/treylom/tofukyung-plugins.git
-/plugin install lesson-cc-codex
+/plugin install cc-codex-lessons
 ```
 > 두 줄을 **한 줄씩** 입력(한꺼번에 붙여넣으면 주소 깨짐). `tofukyung-plugins` 마켓에 강의 도구(lesson-cc-codex·knowledge-manager 등)가 함께 들어 있습니다.
 **방법 B. 직접 클론** — 터미널에서:

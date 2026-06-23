@@ -17,7 +17,7 @@
 **방법 A. 플러그인으로 설치 (권장)** — Claude Code 대화창 안에서:
 ```text
 /plugin marketplace add https://github.com/treylom/tofukyung-plugins.git
-/plugin install lesson-cc-codex
+/plugin install cc-codex-lessons
 ```
 > 두 줄을 **한 줄씩** 입력하세요(한꺼번에 붙여넣으면 주소가 깨져요). `tofukyung-plugins` 마켓 안에 lesson-cc-codex·knowledge-manager 등 강의 도구가 함께 들어 있어요. 안 되면 `/plugin` 을 쳐서 도움말을 확인하세요.
 
