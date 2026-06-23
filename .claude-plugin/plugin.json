@@ -1,7 +1,7 @@
 {
   "name": "cc-codex-lessons",
   "description": "Claude Code + Codex 실습을 1:1로 진행하는 인터랙티브 실습 스킬 (비개발자 실무자 대상). 수강생 프로필 기반 적응형.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "treylom"
   },
