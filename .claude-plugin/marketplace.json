@@ -1,0 +1,11 @@
+{
+  "name": "lesson-cc-codex Marketplace",
+  "description": "Claude Code + Codex 인터랙티브 실습 스킬 마켓플레이스 (비개발자 실무자 대상)",
+  "plugins": [
+    {
+      "name": "lesson-cc-codex",
+      "description": "Claude Code + Codex 실습을 1:1로 진행하는 인터랙티브 실습 스킬. 수강생 프로필 기반 적응형.",
+      "path": "."
+    }
+  ]
+}
