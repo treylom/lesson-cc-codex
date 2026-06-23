@@ -6,6 +6,19 @@
 
 ---
 
+> ## 🙏 원작 크레딧 (Credits & Inspiration)
+>
+> 이 코스는 아래 두 공개 입문 가이드의 **아이디어·구성·학습 흐름에서 영감**을 받아 출발했습니다. 길을 먼저 닦아주신 두 분께 깊이 감사드립니다 🙇
+>
+> | 원작 | 만든 분 | 링크 | 라이선스 |
+> |------|---------|------|----------|
+> | **CC101 — Claude Code 101** | **fivetaku** | [cc101.axwith.com](https://cc101.axwith.com) · `fivetaku/cc101` | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
+> | **Codex 101** | **swhan0329** | [swhan0329.github.io/codex-101](https://swhan0329.github.io/codex-101/) · `swhan0329/codex-101` | — |
+>
+> 두 가이드의 **문장·예시를 그대로 옮기지 않고**, 비개발자 1인 사업자 실무자용 시나리오로 **전부 새로 썼습니다**(변경됨). 자세한 라이선스·크레딧은 맨 아래 **'기반 / 크레딧'** 절을 참고하세요.
+
+---
+
 ## 🚀 빠른 시작 (설치 & 첫 실행)
 
 ### 1) 사전 준비
@@ -169,7 +182,9 @@ lesson-cc-codex/
 ## 🛠️ 기반 / 크레딧
 
 - **lesson-a / lesson-skill** — "이론 설명 → 실습" 진행 패턴의 대화형 교육 엔진 계보.
-- 코스 콘텐츠는 공개 가이드(Claude Code 101 = fivetaku/cc101 · Codex 101 = swhan0329/codex-101)를 비개발자 실무자용으로 재구성한 것입니다. (통째 복붙이 아니라 학습 목표별 재작곡.)
+- **CC101 by fivetaku (cc101.axwith.com)** — Claude Code 101 한국어 입문 가이드(`fivetaku/cc101`). 라이선스 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). 본 코스의 구성·학습 목표에서 **아이디어와 영감**을 받아 비개발자 실무자용으로 재구성했습니다(**변경됨**).
+- **Codex 101 by swhan0329** — OpenAI Codex 입문 가이드(`swhan0329/codex-101` · https://swhan0329.github.io/codex-101/). (cc101 또한 codex-101에서 영감을 받아 만들어졌습니다.)
+- 위 가이드들의 표현(문장·코드)을 통째로 복붙하지 않고, 학습 목표별로 다시 썼습니다.
 
 ## 📄 라이선스
 
