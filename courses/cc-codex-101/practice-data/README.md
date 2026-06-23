@@ -18,6 +18,10 @@
 ### 기타
 - `README.md` — 현재 문서.
 
+## 파일 인코딩
+- 모든 `.csv`는 **utf-8-sig**(BOM 포함 UTF-8)로 저장돼 있습니다 — 엑셀(특히 한국어 Windows)에서 한글이 깨지지 않게 열기 위함입니다.
+- 새 CSV를 추가하거나 수정할 때도 **utf-8-sig**로 저장하세요. (Python: `open(path, "w", encoding="utf-8-sig")` / `df.to_csv(path, encoding="utf-8-sig")`)
+
 ## 이 폴더로 해볼 수 있는 것
 1. 폴더 탐색 질문하기.
 2. CSV 열 구조·패턴 파악하기.
