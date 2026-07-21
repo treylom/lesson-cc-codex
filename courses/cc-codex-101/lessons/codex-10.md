@@ -588,7 +588,7 @@ newsletter-42ho-draft.md 파일로 저장해줘.
 | 축 | Claude Code (CC) | Codex |
 |----|------------------|-------|
 | 만든 곳 | Anthropic | OpenAI |
-| 기본 모델 | Claude 3.x / 4.x | gpt-5.5 |
+| 기본 모델 | Claude 4.x / 5 (Opus 4.8 등) | gpt-5.6 |
 | 규칙 파일 | `CLAUDE.md` | `AGENTS.md` |
 | 스킬 호출 기호 | `/스킬이름` | `$스킬이름` |
 | 샌드박스 | 승인 게이트 | read-only / workspace-write / danger-full-access |

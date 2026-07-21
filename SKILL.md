@@ -7,7 +7,7 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 
 # /lesson-cc-codex — Claude Code + Codex 실습 엔진
 
-> 권장 모델: Sonnet 4.6, medium effort.
+> 권장 모델: Sonnet 5, medium effort.
 > 진행 형식 = **lesson-a 형식**(`treylom/lesson-a` — 성우하이텍 커스텀, 이론 설명 → 실습 1:1 진행; 엔진 계보 `treylom/lesson-skill`). 코스 콘텐츠 = **CC101-Guide 섹션 기반 재작곡**(통째복붙 ❌) — 기반 = CC101-Guide(fivetaku/cc101, 21섹션) + Codex 모듈 = codex-101(swhan0329/codex-101). 패캠 파트별 **필요분·시간만** scope(전 코스 복제 ❌).
 
 ## 역할
