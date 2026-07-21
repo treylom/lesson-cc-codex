@@ -851,4 +851,4 @@ CC의 codex plugin(`/codex` 또는 `$codex`)으로 CC 세션 안에서 Codex를 
 | **practice-data/creator/** | 실습 데이터 원본 6파일 | `course_sales_monthly.csv`·`student_inquiries.csv`·`newsletter_stats.csv`·`content_plan.md`·`research_memo.md`·`consulting_schedule.md` |
 | **다른 업종 트랙** | 스토어·프리랜서·로컬 | `practice-data/store/`·`practice-data/freelancer/`·`practice-data/local/` |
 
-> 🔎 **재확인 권장**: 이 레슨의 모델명(gpt-5.5·gpt-5.4-mini)·플래그(`--sandbox`·`--yolo`·`--cd`·`--ask-for-approval`)·슬래시 명령(`/status`·`/model`·`/compact`·`/init`·`/permissions`)은 공식 docs(`developers.openai.com/codex`) 기준 (2026-06 스냅샷). 사용·수강 전 1회 교차 검증 권장.
+> 🔎 **재확인 권장**: 이 레슨의 모델명(gpt-5.6·gpt-5.4-mini)·플래그(`--sandbox`·`--yolo`·`--cd`·`--ask-for-approval`)·슬래시 명령(`/status`·`/model`·`/compact`·`/init`·`/permissions`)은 공식 docs(`developers.openai.com/codex`) 기준 (플래그·명령 2026-06 스냅샷 · 모델명 2026-07 현행화). 사용·수강 전 1회 교차 검증 권장.
