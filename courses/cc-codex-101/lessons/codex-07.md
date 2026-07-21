@@ -185,7 +185,7 @@ cat ~/.codex/config.toml
 
 **기대 결과**:
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 

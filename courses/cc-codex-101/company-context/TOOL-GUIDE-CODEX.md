@@ -239,14 +239,14 @@ CC에서 모델·effort를 골랐듯, Codex도 **모델(능력)**과 **effort(�
 
 | 모델 (예시) | 성격 | 지우가 쓸 때 |
 |---|---|---|
-| `gpt-5.5` ⭐ | 가장 깊고 정확 (대신 느리고 비쌈) | 복잡한 멀티파일 작업, 중요한 콘텐츠·커리큘럼 기획 |
+| `gpt-5.6` ⭐ | 가장 깊고 정확 (대신 느리고 비쌈) | 복잡한 멀티파일 작업, 중요한 콘텐츠·커리큘럼 기획 |
 | `gpt-5.4` | 권장 기본값 (균형) | 평소 일상 작업 대부분 |
 | `gpt-5.4-mini` | 빠르고 가벼움 | 단순 반복(주석 한글로, 짧은 변환, 이름 정렬) |
 | `gpt-5.3-codex` | 옛 모델(은퇴 예정) | 쓰지 않음 |
 
 ```bash
 # 시작할 때 모델 지정
-codex -m gpt-5.5 "올해 강의 전체 커리큘럼을 다시 설계해 줘"
+codex -m gpt-5.6 "올해 강의 전체 커리큘럼을 다시 설계해 줘"
 
 # 세션 도중 가볍게 전환
 /model gpt-5.4-mini
@@ -284,13 +284,13 @@ none  →  low  →  medium  →  high  →  xhigh
 
 ```toml
 # ~/.codex/config.toml  (또는 프로젝트 폴더의 .codex/config.toml)
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 ```
 
 읽는 법:
-- `model = "gpt-5.5"` → 기본 모델은 gpt-5.5
+- `model = "gpt-5.6"` → 기본 모델은 gpt-5.6
 - `model_reasoning_effort = "medium"` → 기본 생각 강도는 중간
 - `approval_policy = "on-request"` → 고치기 전에 매번 확인받기
 
@@ -459,7 +459,7 @@ codex mcp list
 | 증상 | 먼저 해볼 것 | 어디서 배우나 |
 |---|---|---|
 | `command not found`가 떠요 | 터미널을 완전히 닫았다 다시 열기 → `codex --version` 재시도 (설치 직후 가장 흔한 일시 현상) | codex-01 |
-| `gpt-5.5` 모델이 안 보여요 | ChatGPT 구독 등급(Plus/Pro) 확인 + `npm update -g @openai/codex` + 일단 `gpt-5.4`로 진행 | codex-10 |
+| `gpt-5.6` 모델이 안 보여요 | ChatGPT 구독 등급(Plus/Pro) 확인 + `npm update -g @openai/codex` + 일단 `gpt-5.4`로 진행 | codex-10 |
 | 답이 너무 느리거나 장황해요 | effort를 낮추기(medium→low) → 작업을 잘게 쪼개기 → 단순 작업은 `gpt-5.4-mini` | codex-03 |
 | 파일을 못 고친다 / 인터넷이 막힌다 | `/status`·`/permissions`로 현재 샌드박스 모드 확인 → 필요할 때만 신중히 권한 올리기 | codex-05 |
 | AGENTS.md가 안 먹는 것 같다 | 파일 위치(루트 또는 `.codex/`)·실행 폴더·파일 이름 철자(`AGENTS.md`, 대소문자) 확인 | codex-06 |
@@ -515,7 +515,7 @@ $스킬이름      ← Codex 스킬 부르기 (CC는 /스킬이름)
 
 **모델 고르기**
 ```bash
--m gpt-5.5       ← 깊고 정확 (느림)
+-m gpt-5.6       ← 깊고 정확 (느림)
 -m gpt-5.4       ← 기본 (권장)
 -m gpt-5.4-mini  ← 빠름 (단순한 일)
 ```

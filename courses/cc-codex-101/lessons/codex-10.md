@@ -82,7 +82,7 @@ Codex 세션 안에서 아래 슬래시 명령을 입력한다. "뭔가 이상�
 
 **기대 결과**:
 ```
-모델: gpt-5.5
+모델: gpt-5.6
 Effort: medium
 샌드박스: workspace-write
 토큰 사용: 12,400 / 100,000
@@ -90,7 +90,7 @@ Effort: medium
 ```
 
 **관찰 포인트**:
-- 모델이 `gpt-5.4-mini`로 되어 있으면 → 복잡한 분석엔 부족할 수 있음 (`/model gpt-5.5`로 전환)
+- 모델이 `gpt-5.4-mini`로 되어 있으면 → 복잡한 분석엔 부족할 수 있음 (`/model gpt-5.6`로 전환)
 - 토큰이 80,000을 넘어가면 → `/compact`로 정리 후 계속
 - 샌드박스가 `read-only`인데 파일을 저장하려 한다면 → 당연히 실패
 
@@ -177,7 +177,7 @@ consulting_schedule.md를 읽고 3월 컨설팅 예약 현황을 정리해줘.
 ```
 
 **관찰 포인트**:
-- `read-only`면 파일 저장 불가 → `codex -m gpt-5.5 --sandbox workspace-write`로 재시작
+- `read-only`면 파일 저장 불가 → `codex -m gpt-5.6 --sandbox workspace-write`로 재시작
 - 파일 삭제·덮어쓰기 전엔 항상 승인 요청이 뜨는 게 정상
 
 ---
@@ -192,13 +192,13 @@ ls ~/.codex/config.toml
 
 # 파일이 없으면 새로 만들기
 cat > ~/.codex/config.toml << 'EOF'
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 EOF
 ```
 
-**기대 결과**: 이제 `codex`를 실행할 때마다 위 설정이 자동 적용된다. `/status`로 확인하면 `gpt-5.5 / medium`이 기본값으로 표시된다.
+**기대 결과**: 이제 `codex`를 실행할 때마다 위 설정이 자동 적용된다. `/status`로 확인하면 `gpt-5.6 / medium`이 기본값으로 표시된다.
 
 **체크포인트** ✓:
 - 설정 저장 후 Codex를 재시작해야 적용됨
@@ -288,7 +288,7 @@ codex --cd ~/Desktop/jiu-business/practice-data/creator
 | 초보 뉴스레터 7일 완성 | 1,268 | 2025-10 | 355만 |
 
 **관찰 포인트**:
-- gpt-5.4-mini는 단순 집계에서 gpt-5.5 대비 확연히 빠름
+- gpt-5.4-mini는 단순 집계에서 gpt-5.6 대비 확연히 빠름
 - 클로드코드 강의의 최고 월은 2026-03(1,242만) — 2026-02 출시(508만) 다음 달에 급성장한 패턴이 보임
 
 ---
@@ -568,7 +568,7 @@ newsletter-42ho-draft.md 파일로 저장해줘.
 | **결과가 이상하거나 파일을 엉뚱하게 읽는다** | 파일 특정 안 됨 | `@파일명`으로 정확히 지목 |
 | **로그인이 계속 풀린다** | 세션 만료 or 환경변수 미설정 | `codex login` 재실행 / `~/.bashrc`에 `OPENAI_API_KEY` 확인 |
 | **샌드박스 오류 — 파일 저장 안 됨** | `read-only` 모드 | `/permissions`로 모드 확인 → `workspace-write`로 재시작 |
-| **gpt-5.5가 안 보인다** | 구독·계정 설정 문제 | 계정에서 사용 가능한 모델 확인 + `npm update -g @openai/codex` |
+| **gpt-5.6가 안 보인다** | 구독·계정 설정 문제 | 계정에서 사용 가능한 모델 확인 + `npm update -g @openai/codex` |
 | **같은 질문을 계속 다시 물어본다** | 맥락 증발 | `/compact` 후 핵심 요청 재전달, 또는 AGENTS.md에 상황 설명 추가 |
 | **MCP 연결이 실패한다** | URL 오류 or 서버 미가동 | `codex mcp list`로 목록 확인 → 잘못된 항목 삭제 후 재추가 |
 | **yolo 모드에서 실수로 파일이 지워졌다** | 승인 없이 실행됨 | `--yolo`는 테스트 폴더에서만. Git 백업 있으면 `git restore` |
@@ -602,7 +602,7 @@ newsletter-42ho-draft.md 파일로 저장해줘.
 | 명령 | 기능 | 언제 쓰나 |
 |------|------|----------|
 | `/status` | 세션 상태 (모델·effort·토큰) | 뭔가 이상하다 싶을 때 첫 번째 |
-| `/model` | 모델·effort 전환 | 빠르게 하려면 mini, 깊이 있게는 gpt-5.5 |
+| `/model` | 모델·effort 전환 | 빠르게 하려면 mini, 깊이 있게는 gpt-5.6 |
 | `/permissions` | 샌드박스 모드 확인 | 파일 저장이 안 될 때 |
 | `/plan` | 플랜 모드 켜기 (실행 전 계획만) | 먼저 계획을 보고 싶을 때 |
 | `/compact` | 대화 요약·압축 | 토큰이 80% 넘어갈 때, 작업 완료 후 |
@@ -735,8 +735,8 @@ Mac은 `brew install --cask codex`, 또는 `curl -fsSL https://chatgpt.com/codex
 
 ### 모델·effort
 
-**Q5. gpt-5.5와 gpt-5.4-mini 중 뭘 써야 하나요?**
-일반 분석·초안 작성엔 gpt-5.5로 충분하다. gpt-5.4-mini는 단순 정렬·요약처럼 빠른 처리가 필요할 때 선택한다.
+**Q5. gpt-5.6와 gpt-5.4-mini 중 뭘 써야 하나요?**
+일반 분석·초안 작성엔 gpt-5.6로 충분하다. gpt-5.4-mini는 단순 정렬·요약처럼 빠른 처리가 필요할 때 선택한다.
 
 **Q6. effort를 높이면 비용도 올라가나요?**
 ChatGPT 구독 기반이면 사용량이 아닌 구독료가 기준이라 직접 비용 증가는 없다. 단 시간이 더 걸린다. API 키 방식이라면 토큰 사용이 늘어 비용이 올라간다.
@@ -810,7 +810,7 @@ CC의 codex plugin(`/codex` 또는 `$codex`)으로 CC 세션 안에서 Codex를 
 **설치·세팅**
 
 1. **`~/.codex/AGENTS.md` 하나로 전역 규칙 세팅**: "한국어로 답해줘", "표는 마크다운으로", "파일 삭제 전 항상 물어봐줘"를 한 번 써두면 모든 프로젝트에 자동 적용된다.
-2. **`config.toml` 기본값 고정**: `model = "gpt-5.5"`, `model_reasoning_effort = "medium"`, `approval_policy = "on-request"` 를 써두면 매번 설정할 필요 없다.
+2. **`config.toml` 기본값 고정**: `model = "gpt-5.6"`, `model_reasoning_effort = "medium"`, `approval_policy = "on-request"` 를 써두면 매번 설정할 필요 없다.
 3. **폴더 구조 먼저 보여주기**: 처음 세션을 시작할 때 "이 폴더 구조를 읽고 파일이 어떻게 구성되어 있는지 설명해줘"로 시작하면 이후 분석이 훨씬 정확해진다.
 
 **프롬프트**

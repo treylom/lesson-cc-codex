@@ -179,7 +179,7 @@ course_sales_monthly.csv 파일을 열어서 2026년 3월 데이터 아래에 "�
 이제 Codex에게 진짜 일을 시켜봅니다. 분석 결과를 새 파일로 저장하게 합니다.
 
 ```text
-codex -m gpt-5.5 --sandbox workspace-write "course_sales_monthly.csv 파일을 읽고, 매출 상위 강의 3개를 골라 한 줄씩 요약해줘. 결과를 sales_summary.txt 파일로 저장해줘."
+codex -m gpt-5.6 --sandbox workspace-write "course_sales_monthly.csv 파일을 읽고, 매출 상위 강의 3개를 골라 한 줄씩 요약해줘. 결과를 sales_summary.txt 파일로 저장해줘."
 ```
 
 **명령어 뜯기**:
@@ -442,7 +442,7 @@ student_inquiries.csv 분석 (전체 24건):
 지금까지 read-only로 살펴본 내용을 종합해서, 이번엔 workspace-write 모드로 보고서 초안을 파일에 저장합니다. `on-request`를 함께 줘서 Codex가 필요하다고 판단할 때 내용을 먼저 확인합니다.
 
 ```text
-codex -m gpt-5.5 --sandbox workspace-write --ask-for-approval on-request "지금까지 본 3개 파일(course_sales_monthly.csv, newsletter_stats.csv, student_inquiries.csv)을 종합해서 간단한 인사이트 노트를 만들어줘.
+codex -m gpt-5.6 --sandbox workspace-write --ask-for-approval on-request "지금까지 본 3개 파일(course_sales_monthly.csv, newsletter_stats.csv, student_inquiries.csv)을 종합해서 간단한 인사이트 노트를 만들어줘.
 
 형식:
 ## 이번 달 핵심 발견 3가지
@@ -515,7 +515,7 @@ Codex가 위험하다고 판단하는 작업을 시키면 어떻게 반응하는
 숫자 데이터뿐 아니라 지우가 직접 쓴 기획 노트(`content_plan.md`)도 연결하면 더 풍부한 분석이 됩니다.
 
 ```text
-codex -m gpt-5.5 --sandbox workspace-write "@monthly_insight_draft.md와 @content_plan.md를 함께 보고, content_plan의 '미해결 고민' 섹션에 있는 고민들에 대해 매출·뉴스레터 데이터가 뭔가 힌트를 주는지 한 문단으로 추가해줘. monthly_insight_draft.md 맨 아래에 '## 기획 노트와의 연결' 섹션으로 붙여줘."
+codex -m gpt-5.6 --sandbox workspace-write "@monthly_insight_draft.md와 @content_plan.md를 함께 보고, content_plan의 '미해결 고민' 섹션에 있는 고민들에 대해 매출·뉴스레터 데이터가 뭔가 힌트를 주는지 한 문단으로 추가해줘. monthly_insight_draft.md 맨 아래에 '## 기획 노트와의 연결' 섹션으로 붙여줘."
 ```
 
 **기대 결과**: `monthly_insight_draft.md` 파일 맨 아래에 새 섹션이 추가됩니다.
@@ -548,7 +548,7 @@ content_plan.md의 '미해결 고민' 중 "강의 추천 헷갈림" → 수강�
 config.toml은 이런 모양입니다:
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 ```
@@ -577,7 +577,7 @@ codex "안녕"
 
 ```
 사용 가능한 모델:
-  [*] gpt-5.5 (현재)
+  [*] gpt-5.6 (현재)
       gpt-5.4-mini (빠름·경량, 단순 작업용)
 
 변경하려면 모델 이름 입력: _
@@ -632,19 +632,19 @@ danger-full-access = "인터넷까지 열어줄게"           ← 검증된 자�
 
 ```bash
 # 읽기만 (가장 안전)
-codex -m gpt-5.5 --sandbox read-only "지시문"
+codex -m gpt-5.6 --sandbox read-only "지시문"
 
 # 기본 (일상 작업 — workspace-write가 기본값)
-codex -m gpt-5.5 --sandbox workspace-write "지시문"
+codex -m gpt-5.6 --sandbox workspace-write "지시문"
 
 # 고치기 전에 필요시 물어보게 하기
-codex -m gpt-5.5 --sandbox workspace-write --ask-for-approval on-request "지시문"
+codex -m gpt-5.6 --sandbox workspace-write --ask-for-approval on-request "지시문"
 
 # 신뢰 외 명령은 하나씩 승인 (더 보수적)
-codex -m gpt-5.5 --ask-for-approval untrusted "지시문"
+codex -m gpt-5.6 --ask-for-approval untrusted "지시문"
 
 # 전부 위임 (외부 격리 환경에서만 — 경고 숙지 후)
-codex -m gpt-5.5 --yolo "지시문"
+codex -m gpt-5.6 --yolo "지시문"
 
 # 비대화형 자동 실행 (CI/CD 등)
 codex exec --sandbox workspace-write "지시문"

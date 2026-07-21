@@ -72,17 +72,17 @@ AGENTS.override.md  >  ./AGENTS.md  >  ../AGENTS.md  >  ~/.codex/AGENTS.md
 
 비유: 자주 가는 순댓국집에서 사장님이 "덜 맵게, 양 많이"를 기억해두는 것. 들어서기만 해도 그 주문이 나옵니다.
 
-매번 터미널에 `-m gpt-5.5 --ask-for-approval on-request`를 길게 치는 대신, `config.toml`에 한 번 적어두면 다음부터 `codex --cd ~/강의관리`만 쳐도 그 설정이 자동 적용됩니다.
+매번 터미널에 `-m gpt-5.6 --ask-for-approval on-request`를 길게 치는 대신, `config.toml`에 한 번 적어두면 다음부터 `codex --cd ~/강의관리`만 쳐도 그 설정이 자동 적용됩니다.
 
 ```toml
 # ~/.codex/config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 ```
 
 읽는 법 한 줄씩:
-- `model = "gpt-5.5"` → 기본 모델은 gpt-5.5 (균형 잡힌 기본값)
+- `model = "gpt-5.6"` → 기본 모델은 gpt-5.6 (균형 잡힌 기본값)
 - `model_reasoning_effort = "medium"` → 기본 생각 강도는 중간 (대부분 작업에 적당)
 - `approval_policy = "on-request"` → 모델이 필요하다고 판단할 때 확인 요청 (안전)
 
@@ -531,8 +531,8 @@ explorer.exe $(wslpath -w ~/.codex)
 ```toml
 # config.toml — 지우의 Codex 기본 설정
 
-# 기본 모델: gpt-5.5 (균형 잡힌 기본값)
-model = "gpt-5.5"
+# 기본 모델: gpt-5.6 (균형 잡힌 기본값)
+model = "gpt-5.6"
 
 # 기본 생각 강도: medium (대부분의 사업 분석 작업에 적당)
 model_reasoning_effort = "medium"
@@ -555,7 +555,7 @@ Codex가 켜지면:
 
 **기대 결과**:
 ```
-현재 모델: gpt-5.5
+현재 모델: gpt-5.6
 Effort: medium
 승인 정책: on-request
 현재 폴더: .../practice-data/creator
@@ -577,13 +577,13 @@ model_reasoning_effort = "low"
 
 **중요한 강의 커리큘럼 분석이나 복잡한 보고서를 만들 때**:
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "high"
 ```
 
 **지우의 실제 추천 기본값 (일상 업무용)**:
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 approval_policy = "on-request"
 ```
@@ -609,7 +609,7 @@ practice-data/creator/AGENTS.md에서 읽음.
 
 [config.toml — 기본 모델·설정]
 ~/.codex/config.toml에서 읽음.
-→ gpt-5.5, effort=medium, 파일 수정 전 확인 요청
+→ gpt-5.6, effort=medium, 파일 수정 전 확인 요청
 
 [다음 세션에서는]:
 새 Codex 세션을 열어도 같은 폴더라면 AGENTS.md가 자동으로 읽힙니다.
@@ -628,7 +628,7 @@ config.toml도 내 컴퓨터 전체 기본값으로 남아 있어 매번 같은 
 | AGENTS.md를 바꿨는데 반영이 안 된다 | 기존 세션은 이미 읽은 규칙서를 유지 | Codex 세션을 새로 시작(터미널 새로 열기)하면 바뀐 AGENTS.md를 다시 읽음 |
 | 세션 안에서 `/init`을 입력했는데 아무것도 안 생긴다 | Codex 버전 차이 또는 명령 입력 위치 오류 | `/init`은 Codex 세션 안 입력창에서 입력해야 합니다 (터미널 셸 ❌). 그래도 안 되면 직접 텍스트 편집기로 AGENTS.md 파일을 만들어도 됩니다 |
 | config.toml이 적용 안 된다 | 파일 위치 오류 또는 파일 형식 오류 | `~/.codex/config.toml` 경로를 다시 확인. TOML 형식에서 따옴표·등호가 올바른지 확인 |
-| `gpt-5.5` 모델이 목록에 없다 | ChatGPT 구독 등급 문제 또는 버전 차이 | ChatGPT Plus/Pro 구독 확인. `/model`로 사용 가능한 목록을 확인하세요 |
+| `gpt-5.6` 모델이 목록에 없다 | ChatGPT 구독 등급 문제 또는 버전 차이 | ChatGPT Plus/Pro 구독 확인. `/model`로 사용 가능한 목록을 확인하세요 |
 | Codex가 파일 저장 전에 전혀 확인을 안 한다 | config.toml의 `approval_policy` 누락 또는 `never` 설정 | config.toml에 `approval_policy = "on-request"` 추가 후 재시작. on-request는 모델이 판단할 때 확인하므로 모든 저장 전 확인이 보장되지는 않음 |
 | "관찰 → 해석 → 제안" 형식이 안 나온다 | AGENTS.md의 "보고서 형식" 섹션이 빠졌거나 세션 재시작 안 함 | AGENTS.md 내용 확인 후 Codex 재시작 |
 | `~/.codex/` 폴더를 Mac에서 열고 싶다 | Finder는 `.`으로 시작하는 숨김 폴더를 기본적으로 안 보여줌 | 터미널에서 `open ~/.codex/` 입력. Windows WSL이면 `explorer.exe $(wslpath -w ~/.codex)` |
@@ -651,7 +651,7 @@ config.toml도 내 컴퓨터 전체 기본값으로 남아 있어 매번 같은 
 ### config.toml 핵심 키 3개
 
 ```toml
-model = "gpt-5.5"                  # 기본 모델 (gpt-5.5 권장)
+model = "gpt-5.6"                  # 기본 모델 (gpt-5.6 권장)
 model_reasoning_effort = "medium"   # low/medium/high/xhigh
 approval_policy = "on-request"      # 모델 판단 시 확인 요청 (매번 보장 아님)
 ```

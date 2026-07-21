@@ -55,7 +55,7 @@ CC와 Codex가 딱 그 관계입니다.
 | 규칙서 | **`CLAUDE.md`** | **`AGENTS.md`** | **같은 역할, 이름만 다름** |
 | 스킬 호출 기호 | `/스킬이름` | **`$스킬이름`** | **다르다** — 슬래시 vs 달러 |
 | 세션 명령 | `/compact` `/model` `/plan` | `/compact` `/model` `/plan` | **완전히 같다** |
-| 모델 | Claude (sonnet, opus…) | **gpt-5.5 / gpt-5.4-mini** | **다르다** — 회사 따라 |
+| 모델 | Claude (sonnet, opus…) | **gpt-5.6 / gpt-5.4-mini** | **다르다** — 회사 따라 |
 | 안전 모드 | 승인 게이트 (허용/거부) | **샌드박스 3모드** (read-only / workspace-write / danger-full-access) | **같은 정신, 표기 다름** |
 | 외부 도구 연결 | **MCP** | **MCP** | **완전히 같다** |
 | 긴 대화 정리 | `/compact` | `/compact` | **동일** |
@@ -350,7 +350,7 @@ Codex 세션 안에서 아래를 입력해 봅니다.
 
 ```
 현재 세션 상태:
-- 모델: gpt-5.5
+- 모델: gpt-5.6
 - effort: medium
 - 샌드박스 모드: read-only
 - 네트워크: 차단됨
@@ -380,7 +380,7 @@ codex --cd ~/Documents/cc-codex-101/practice-data/creator -m gpt-5.4-mini "cours
 >
 > | 손잡이 | 낮을 때 | 높을 때 |
 > |--------|---------|---------|
-> | **모델** | `gpt-5.4-mini` — 빠르고 가벼움 | `gpt-5.5` — 깊고 정확 (느리고 비쌈) |
+> | **모델** | `gpt-5.4-mini` — 빠르고 가벼움 | `gpt-5.6` — 깊고 정확 (느리고 비쌈) |
 > | **effort** | `low` — 빠른 답 | `high`/`xhigh` — 신중하게 검증 후 답 |
 >
 > 비유: 급한 메모는 빠르게 적고, 중요한 제안서는 꼼꼼하게 씁니다. 지우도 AI에게 "단순한 일이면 빨리 / 중요한 분석이면 꼼꼼하게"를 골라 시킬 수 있습니다.
@@ -393,7 +393,7 @@ codex --cd ~/Documents/cc-codex-101/practice-data/creator -m gpt-5.4-mini "cours
 - 이름(gpt-5.x vs Claude)과 정확한 옵션만 다릅니다.
 
 **관찰/체크포인트**:
-- `gpt-5.4-mini`(빠름) vs `gpt-5.5`(깊음)의 답 품질이 다르게 느껴지나요?
+- `gpt-5.4-mini`(빠름) vs `gpt-5.6`(깊음)의 답 품질이 다르게 느껴지나요?
 - 세션 안에서 `/model`을 입력하면 모델과 effort(`low` / `medium` / `high` / `xhigh`)를 함께 바꿀 수 있습니다. effort를 높이면 더 꼼꼼하고 제안이 풍부해집니다.
 
 ---
@@ -618,7 +618,7 @@ codex --cd ~/Documents/cc-codex-101/practice-data/local "daily_sales_2026-05.csv
 | 상황 | 원인 | 해결 |
 |------|------|------|
 | `command not found: codex` | Codex가 설치되지 않았거나, 터미널이 새 설치를 아직 못 찾는 상태 | 터미널 완전히 닫고 새로 열기 → `codex --version` 다시 시도. 그래도 안 되면 `npm install -g @openai/codex` 재실행 |
-| `gpt-5.5` 모델이 없다고 함 | 구독·계정에 따라 사용 가능 모델이 다를 수 있음, 또는 Codex 버전이 오래됨 | `npm update -g @openai/codex` 로 업데이트 → 그래도 없으면 `gpt-5.4-mini`로 진행하거나 `codex login` 재로그인으로 구독 상태 갱신 |
+| `gpt-5.6` 모델이 없다고 함 | 구독·계정에 따라 사용 가능 모델이 다를 수 있음, 또는 Codex 버전이 오래됨 | `npm update -g @openai/codex` 로 업데이트 → 그래도 없으면 `gpt-5.4-mini`로 진행하거나 `codex login` 재로그인으로 구독 상태 갱신 |
 | Codex가 파일을 못 찾음 | `--cd` 경로가 틀렸거나, 폴더에 파일이 없는 상태 | `ls` 로 파일이 그 폴더에 있는지 먼저 확인 → 경로 다시 입력 |
 | CC와 Codex 답이 많이 다름 | 정상일 수 있음. 서로 다른 모델(Claude vs GPT)이라 표현·깊이가 다를 수 있음 | 숫자(실제 수치)는 같은지 먼저 확인. 다르다면 "실제 파일 수치로 계산해줘"라고 다시 요청 |
 | AGENTS.md가 안 먹히는 것 같음 | 파일 위치가 틀렸거나, 파일 이름 대소문자 오류 | 파일이 `creator/` 폴더 안에 `AGENTS.md`(대문자)로 있는지 확인. `codex --cd` 경로와 파일 위치가 일치해야 함 |
