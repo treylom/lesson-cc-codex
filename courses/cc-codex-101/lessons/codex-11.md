@@ -722,9 +722,9 @@ codex --cd ~/Documents/cc-codex-101/practice-data/local "daily_sales_2026-05.csv
 부록 모듈은 자유 순서로, 필요할 때 진입하세요.
 
 ```text
-/cc-07   ← GitHub 연동 (내 보고서를 버전 관리하고 싶다면)
-/cc-09   ← MCP (외부 도구를 CC에 연결하고 싶다면)
-/cc-10   ← 서브에이전트·Hooks·자동화 (반복 작업을 완전 자동으로 돌리고 싶다면)
+/lesson-cc-codex cc-07   ← GitHub 연동 (내 보고서를 버전 관리하고 싶다면)
+/lesson-cc-codex cc-09   ← MCP (외부 도구를 CC에 연결하고 싶다면)
+/lesson-cc-codex cc-10   ← 서브에이전트·Hooks·자동화 (반복 작업을 완전 자동으로 돌리고 싶다면)
 /codex-04 ← Codex 여러 환경 (앱·IDE·웹에서도 Codex 쓰기)
 /codex-08 ← 비대화형·codex exec·CI/CD (Codex를 자동 배치 작업으로 활용)
 ```
