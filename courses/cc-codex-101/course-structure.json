@@ -21,23 +21,23 @@
     { "id": "freelancer", "label": "1인 컨설턴트·프리랜서 (디자인·마케팅·개발 외주)", "default": false, "data_dir": "practice-data/freelancer" },
     { "id": "local", "label": "동네 가게·로컬 (카페·공방·학원)", "default": false, "data_dir": "practice-data/local" }
   ],
-  "numbering": "강의 클립 = 넘버링 커맨드 분리: /cc-NN · /codex-NN (lesson-a /start-practice-NN 형). 부록도 같은 커맨드로 self-study.",
+  "numbering": "강의 클립 = 넘버링 커맨드 분리: /lesson-cc-codex cc-NN · /codex-NN (lesson-a /start-practice-NN 형). 부록도 같은 커맨드로 self-study.",
   "tracks": {
     "cc": {
       "name": "Claude Code 트랙 (cc101 21섹션 완전커버)",
       "source_canon": "fivetaku/cc101 (CC101-Guide 21섹션) — 재작곡, 통째복붙 금지",
       "modules": [
-        { "id": "cc-01", "command": "/cc-01", "title": "설치와 첫 실행 (맨바닥 터미널)", "lesson_file": "lessons/cc-01.md", "covers": ["Sec01 Claude Code란", "Sec04 요금제", "Sec05 설치·인증"], "type": "lecture", "curriculum_clip": ["1.2.2", "1.2.3"], "grounding_deck": "Part1 1.2.2/1.2.3" },
-        { "id": "cc-02", "command": "/cc-02", "title": "에이전트 루프 + 첫 와우", "lesson_file": "lessons/cc-02.md", "covers": ["Sec07 핵심개념(루프·Context/Tools/Permissions/Memory/Session)", "Sec02 활용사례"], "type": "lecture", "curriculum_clip": ["1.2.1", "1.2.2"], "grounding_deck": "Part1 1.2.1/1.2.2" },
-        { "id": "cc-03", "command": "/cc-03", "title": "파일 다루기 + 명령어", "lesson_file": "lessons/cc-03.md", "covers": ["Sec09 명령어(CLI/슬래시/단축키 TOP5)", "Sec02"], "type": "lecture", "curriculum_clip": ["1.3.1"], "grounding_deck": "Part1 1.3.1" },
-        { "id": "cc-04", "command": "/cc-04", "title": "워크플로우 + Plan + 좋은 프롬프트", "lesson_file": "lessons/cc-04.md", "covers": ["Sec10 워크플로우·Plan·프롬프트", "Sec03 바이브코딩"], "type": "lecture", "curriculum_clip": ["1.3.1", "1.3.3"], "grounding_deck": "Part1 1.3.1/1.3.3" },
-        { "id": "cc-05", "command": "/cc-05", "title": "CLAUDE.md 규칙서", "lesson_file": "lessons/cc-05.md", "covers": ["Sec08 CLAUDE.md(템플릿 4종)"], "type": "lecture", "curriculum_clip": ["1.3.x"], "grounding_deck": "Part1 1.3.x", "forward_utility": "Codex AGENTS.md(codex-06) · Part3 KM/옵시디언 규칙 · Part4+ 멀티에이전트" },
-        { "id": "cc-06", "command": "/cc-06", "title": "세션관리 + 맥락오염 + 비용", "lesson_file": "lessons/cc-06.md", "covers": ["Sec11 세션(/compact·resume·병렬)", "Sec19 비용·토큰"], "type": "lecture", "curriculum_clip": ["1.2.3", "1.3.2"], "grounding_deck": "Part1 1.2.3 씨앗/1.3.2" },
-        { "id": "cc-07", "command": "/cc-07", "title": "GitHub로 저장·공유", "lesson_file": "lessons/cc-07.md", "covers": ["Sec12 Git 기초·하루 루틴"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
-        { "id": "cc-08", "command": "/cc-08", "title": "플러그인 + 스킬·슬래시 + codex plugin", "lesson_file": "lessons/cc-08.md", "covers": ["Sec06 플러그인", "Sec16 Skills(SKILL.md)"], "type": "lecture", "curriculum_clip": ["1.3.2"], "grounding_deck": "Part1 1.3.2", "note": "CC 안에서 Codex 같이 쓰는 codex plugin 포함 — Part2 Codex 트랙 다리. 플러그인 식별·설치경로·기능은 실제 0.140.0 실측+공식docs 확인 후 확정." },
-        { "id": "cc-09", "command": "/cc-09", "title": "MCP 외부도구 연결", "lesson_file": "lessons/cc-09.md", "covers": ["Sec14 MCP"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
-        { "id": "cc-10", "command": "/cc-10", "title": "서브에이전트 + Hooks + 자동화", "lesson_file": "lessons/cc-10.md", "covers": ["Sec17 서브에이전트", "Sec15 Hooks", "Sec20 자동화"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
-        { "id": "cc-11", "command": "/cc-11", "title": "워크스페이스 종합 + 트러블슈팅 + 다음단계", "lesson_file": "lessons/cc-11.md", "covers": ["Sec18 워크스페이스", "Sec13 트러블슈팅", "Sec21 다음단계"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null }
+        { "id": "cc-01", "command": "/lesson-cc-codex cc-01", "title": "설치와 첫 실행 (맨바닥 터미널)", "lesson_file": "lessons/cc-01.md", "covers": ["Sec01 Claude Code란", "Sec04 요금제", "Sec05 설치·인증"], "type": "lecture", "curriculum_clip": ["1.2.2", "1.2.3"], "grounding_deck": "Part1 1.2.2/1.2.3" },
+        { "id": "cc-02", "command": "/lesson-cc-codex cc-02", "title": "에이전트 루프 + 첫 와우", "lesson_file": "lessons/cc-02.md", "covers": ["Sec07 핵심개념(루프·Context/Tools/Permissions/Memory/Session)", "Sec02 활용사례"], "type": "lecture", "curriculum_clip": ["1.2.1", "1.2.2"], "grounding_deck": "Part1 1.2.1/1.2.2" },
+        { "id": "cc-03", "command": "/lesson-cc-codex cc-03", "title": "파일 다루기 + 명령어", "lesson_file": "lessons/cc-03.md", "covers": ["Sec09 명령어(CLI/슬래시/단축키 TOP5)", "Sec02"], "type": "lecture", "curriculum_clip": ["1.3.1"], "grounding_deck": "Part1 1.3.1" },
+        { "id": "cc-04", "command": "/lesson-cc-codex cc-04", "title": "워크플로우 + Plan + 좋은 프롬프트", "lesson_file": "lessons/cc-04.md", "covers": ["Sec10 워크플로우·Plan·프롬프트", "Sec03 바이브코딩"], "type": "lecture", "curriculum_clip": ["1.3.1", "1.3.3"], "grounding_deck": "Part1 1.3.1/1.3.3" },
+        { "id": "cc-05", "command": "/lesson-cc-codex cc-05", "title": "CLAUDE.md 규칙서", "lesson_file": "lessons/cc-05.md", "covers": ["Sec08 CLAUDE.md(템플릿 4종)"], "type": "lecture", "curriculum_clip": ["1.3.x"], "grounding_deck": "Part1 1.3.x", "forward_utility": "Codex AGENTS.md(codex-06) · Part3 KM/옵시디언 규칙 · Part4+ 멀티에이전트" },
+        { "id": "cc-06", "command": "/lesson-cc-codex cc-06", "title": "세션관리 + 맥락오염 + 비용", "lesson_file": "lessons/cc-06.md", "covers": ["Sec11 세션(/compact·resume·병렬)", "Sec19 비용·토큰"], "type": "lecture", "curriculum_clip": ["1.2.3", "1.3.2"], "grounding_deck": "Part1 1.2.3 씨앗/1.3.2" },
+        { "id": "cc-07", "command": "/lesson-cc-codex cc-07", "title": "GitHub로 저장·공유", "lesson_file": "lessons/cc-07.md", "covers": ["Sec12 Git 기초·하루 루틴"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
+        { "id": "cc-08", "command": "/lesson-cc-codex cc-08", "title": "플러그인 + 스킬·슬래시 + codex plugin", "lesson_file": "lessons/cc-08.md", "covers": ["Sec06 플러그인", "Sec16 Skills(SKILL.md)"], "type": "lecture", "curriculum_clip": ["1.3.2"], "grounding_deck": "Part1 1.3.2", "note": "CC 안에서 Codex 같이 쓰는 codex plugin 포함 — Part2 Codex 트랙 다리. 플러그인 식별·설치경로·기능은 실제 0.140.0 실측+공식docs 확인 후 확정." },
+        { "id": "cc-09", "command": "/lesson-cc-codex cc-09", "title": "MCP 외부도구 연결", "lesson_file": "lessons/cc-09.md", "covers": ["Sec14 MCP"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
+        { "id": "cc-10", "command": "/lesson-cc-codex cc-10", "title": "서브에이전트 + Hooks + 자동화", "lesson_file": "lessons/cc-10.md", "covers": ["Sec17 서브에이전트", "Sec15 Hooks", "Sec20 자동화"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null },
+        { "id": "cc-11", "command": "/lesson-cc-codex cc-11", "title": "워크스페이스 종합 + 트러블슈팅 + 다음단계", "lesson_file": "lessons/cc-11.md", "covers": ["Sec18 워크스페이스", "Sec13 트러블슈팅", "Sec21 다음단계"], "type": "appendix", "curriculum_clip": null, "grounding_deck": null }
       ]
     },
     "codex": {
@@ -60,7 +60,7 @@
     }
   },
   "lecture_clips": {
-    "note": "강의 클립(선별) = 넘버링 커맨드로 분리 진입. 덱에 '지금 /cc-03 입력' 콜아웃 의무. 나머지 = 부록 self-study.",
+    "note": "강의 클립(선별) = 넘버링 커맨드로 분리 진입. 덱에 '지금 /lesson-cc-codex cc-03 입력' 콜아웃 의무. 나머지 = 부록 self-study.",
     "cc": ["cc-01", "cc-02", "cc-03", "cc-04", "cc-05", "cc-06", "cc-08"],
     "codex": ["codex-01", "codex-02", "codex-03", "codex-05", "codex-06", "codex-11"]
   },

@@ -17,6 +17,12 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 
 ---
 
+## 파일 기준 위치
+- SKILL_ROOT = 지금 읽은 이 SKILL.md의 실제 부모 디렉터리. 코스·references는 이 위치 기준으로만 읽는다.
+- COURSE_ROOT = SKILL_ROOT/courses/cc-codex-101.
+- LEARNER_ROOT = 수강생과 확인한 실습 작업 폴더. `.lesson-memory/`와 실습 결과는 이 폴더 기준이다. 설치 리소스와 섞지 않는다.
+- 아래 `{SKILL_ROOT}`는 셸 환경변수가 아니라 실제 경로로 치환할 표기다. 경로를 확인할 수 없으면 추측하지 말고 설치 위치부터 확인한다.
+
 ## Step 0: 인자 파싱
 `/lesson-cc-codex {레슨}` 형식을 파싱한다. COURSE_ID 는 이 스킬 전용이라 **`cc-codex-101` 로 고정**.
 
@@ -26,7 +32,7 @@ allowed-tools: "Read Write Bash Glob Grep AskUserQuestion"
 
 - `/lesson-cc-codex cc-01` → COURSE_ID=cc-codex-101, LESSON_ID=cc-01
 - 인자 없음 / `start` / `이어서` → 프로필의 `completed_lessons` 를 보고 **다음 레슨 자동 제안**(없으면 cc-01).
-- **클립 번호**(`N.N.N`, 예 `1.2.3`) → `Read("courses/cc-codex-101/course-structure.json")` 의 `clip_to_lesson[클립]` 으로 LESSON_ID 해소. 없으면 `tracks.*.modules` 의 `curriculum_clip` 역참조(그 클립 포함 모듈 → 대응 fc 레슨).
+- **클립 번호**(`N.N.N`, 예 `1.2.3`) → `Read("{SKILL_ROOT}/courses/cc-codex-101/course-structure.json")` 의 `clip_to_lesson[클립]` 으로 LESSON_ID 해소. 없으면 `tracks.*.modules` 의 `curriculum_clip` 역참조(그 클립 포함 모듈 → 대응 fc 레슨).
 
 ---
 
@@ -40,22 +46,22 @@ Glob(".lesson-memory/*-cc-codex-101.json")
   1. 이름이 어떻게 되세요?
   2. 어느 회사/부서·어떤 업무 하세요?
   3. AI 도구(Claude Code·ChatGPT 등) 경험은? (처음 / 조금 써봤음 / 자주 씀)
-  수집 후 `Read("references/memory-schema.md")` 형식으로 `.lesson-memory/{이름}-cc-codex-101.json` 저장. 인터뷰 거부 시 기본 프로필(`ai_level=beginner`)로 진행.
+  수집 후 `Read("{SKILL_ROOT}/references/memory-schema.md")` 형식으로 `.lesson-memory/{이름}-cc-codex-101.json` 저장. 인터뷰 거부 시 기본 프로필(`ai_level=beginner`)로 진행.
 
 ---
 
 ## Step 2: 코스 컨텍스트 + 레슨 로드
 ```bash
-Read("courses/cc-codex-101/CLAUDE.md")            # 시나리오·성공기준·학습자 프로필
-Read("courses/cc-codex-101/course-structure.json") # 모듈·레슨 그래프
-Glob("courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   # 재귀: 자습(cc-01…codex-11) + 강의용(fastcampus/fc-01…fc-13) 모두 매칭
+Read("{SKILL_ROOT}/courses/cc-codex-101/CLAUDE.md")            # 시나리오·성공기준·학습자 프로필
+Read("{SKILL_ROOT}/courses/cc-codex-101/course-structure.json") # 모듈·레슨 그래프
+Glob("{SKILL_ROOT}/courses/cc-codex-101/lessons/**/{LESSON_ID}.md") → Read 매칭 파일   # 재귀: 자습(cc-01…codex-11) + 강의용(fastcampus/fc-01…fc-13) 모두 매칭
 ```
-레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = 자습 cc-01~11·codex-01~11, 강의용 fc-01~7·fc-08~6). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
+레슨 파일이 없으면 안내: "해당 레슨이 아직 없습니다(범위 = 자습 cc-01~11·codex-01~11, 강의용 fc-01~fc-13). 강사에게 문의하세요." 이후 모든 phase 는 로드한 CLAUDE.md + 레슨 파일을 기준으로 삼는다.
 
 ---
 
 ## Step 3: 3-Phase 실습 흐름
-`Read("references/lesson-engine.md")` 를 로드해 Phase 별 지침을 따른다.
+`Read("{SKILL_ROOT}/references/lesson-engine.md")` 를 로드해 Phase 별 지침을 따른다.
 - **Phase 1 Opening**: 이름으로 인사 → 오늘 학습 목표(레슨 §학습목표) → 준비 확인(터미널·도구 설치 여부).
 - **Phase 2 Progress**: 레슨 §진행을 따라 한 단계씩 — 명령 제시 → **수강생이 직접 입력** → 결과 확인(AskUserQuestion) → 분기(성공=칭찬+다음 / 에러=트러블슈팅). 실습은 **이미 배운 범위만**(안 배운 세팅된 에이전트 진행 ❌).
 - **Phase 3 Closing**: 배운 것 요약 → (해당 시) 저장/커밋 → 다음 레슨 예고 → 프로필 업데이트.

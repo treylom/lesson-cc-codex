@@ -61,7 +61,7 @@ git clone https://github.com/treylom/lesson-cc-codex.git ~/.claude/skills/lesson
 
 각 레슨 15~50분. 강의(`lecture`)는 클립 순서로, 부록(`appendix`)은 같은 명령으로 자습.
 
-### Claude Code 트랙 — `/cc-NN` · `$lesson-cc-codex cc-NN`
+### Claude Code 트랙 — `/lesson-cc-codex cc-NN` · `$lesson-cc-codex cc-NN`
 | 번호 | 제목 | 구분 |
 |------|------|------|
 | cc-01 | 설치와 첫 실행 (맨바닥 터미널) | 강의 |

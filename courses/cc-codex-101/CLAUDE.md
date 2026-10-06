@@ -45,8 +45,8 @@
 - 예) `creator/course_sales_monthly.csv`(강의별 월매출), `creator/student_inquiries.csv`(수강생 문의), `creator/newsletter_stats.csv`(뉴스레터 성과), `creator/content_plan.md`·`research_memo.md`·`consulting_schedule.md`.
 - 자기 업종 트랙의 `README.md`를 먼저 읽고 시작.
 
-## 모듈 구성 (넘버링 커맨드 = `/cc-NN` · `/codex-NN`)
-> 강의 클립은 번호 순서로 진행. 덱에 "지금 `/cc-03` 입력" 콜아웃. 부록도 같은 커맨드로 self-study. 전체 맵·커버 섹션 = `course-structure.json`.
+## 모듈 구성 (넘버링 커맨드 = `/lesson-cc-codex cc-NN` · `/codex-NN`)
+> 강의 클립은 번호 순서로 진행. 덱에 "지금 `/lesson-cc-codex cc-03` 입력" 콜아웃. 부록도 같은 커맨드로 self-study. 전체 맵·커버 섹션 = `course-structure.json`.
 
 **Claude Code 트랙 (cc101 21섹션 완전커버, 11모듈)**
 - 강의: cc-01 설치·첫실행 / cc-02 에이전트 루프·첫와우 / cc-03 파일·명령어 / cc-04 워크플로우·Plan·프롬프트 / cc-05 CLAUDE.md 규칙서 / cc-06 세션·맥락오염·비용 / cc-08 플러그인·스킬·**codex plugin**

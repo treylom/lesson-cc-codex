@@ -18,7 +18,7 @@
 ```json
 {
   "company_role": "제조업 / 운영기획 실무",
-  "completed_lessons": ["1-1", "1-2"],
+  "completed_lessons": ["cc-01", "cc-02"],
   "struggles": ["터미널 명령", "git 개념"],
   "strengths": ["프롬프트에 배경 잘 줌", "빠른 이해"],
   "preferences": {
